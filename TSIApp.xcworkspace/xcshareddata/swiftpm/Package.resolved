@@ -1,0 +1,61 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
+        "state": {
+          "branch": null,
+          "revision": "64dd16a5f2099dd5400f5e6d1442dc5ab0c1d917",
+          "version": "5.2.0"
+        }
+      },
+      {
+        "package": "SwiftDate",
+        "repositoryURL": "https://github.com/malcommac/SwiftDate.git",
+        "state": {
+          "branch": null,
+          "revision": "700dde1b3417fd4a7fd2bec9f5bc8ab2de1b96b4",
+          "version": "6.1.0"
+        }
+      },
+      {
+        "package": "Introspect",
+        "repositoryURL": "https://github.com/siteline/SwiftUI-Introspect.git",
+        "state": {
+          "branch": null,
+          "revision": "f1ec9da347a7fbe53c520d35434f6c2295650bd5",
+          "version": "0.1.1"
+        }
+      },
+      {
+        "package": "SwiftUIPager",
+        "repositoryURL": "https://github.com/fermoya/SwiftUIPager",
+        "state": {
+          "branch": null,
+          "revision": "ccc3dfe866e614b516b9cb42710e8df254c361ad",
+          "version": "1.14.1"
+        }
+      },
+      {
+        "package": "SwiftUIRefresh",
+        "repositoryURL": "https://github.com/siteline/SwiftUIRefresh.git",
+        "state": {
+          "branch": null,
+          "revision": "fa8fac7b5eb5c729983a8bef65f094b5e0d12014",
+          "version": "0.0.3"
+        }
+      },
+      {
+        "package": "SwiftyJSON",
+        "repositoryURL": "https://github.com/SwiftyJSON/SwiftyJSON.git",
+        "state": {
+          "branch": null,
+          "revision": "2b6054efa051565954e1d2b9da831680026cd768",
+          "version": "5.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
