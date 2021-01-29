@@ -1,0 +1,3 @@
+extension Schedule {
+	struct Table { }
+}

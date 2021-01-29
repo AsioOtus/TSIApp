@@ -1,0 +1,21 @@
+"Schedule.TableView.Day" = "Day";
+"Schedule.TableView.Week" = "Week";
+"Schedule.TableView.Month" = "Month";
+
+"Schedule.TableView.LoadingFailed" = "Loading failed: %@";
+
+"Schedule.SettingsView.Filters" = "Filters";
+"Schedule.SettingsView.Filter" = "Filter";
+
+"Schedule.SettingsView.Group" = "Group";
+"Schedule.SettingsView.Lecturer" = "Lecturer";
+"Schedule.SettingsView.Room" = "Room";
+
+"Schedule.SettingsView.LoadingError" = "An error occurred while loading data";
+
+"Schedule.SettingsView.SelectedGroupIsNotExist" = "Selected group is not exist";
+"Schedule.SettingsView.SelectedLecturerIsNotExist" = "Selected lecturer is not exist";
+"Schedule.SettingsView.SelectedRoomIsNotExist" = "Selected room is not exist";
+
+"Preferences.FormView.Preferences" = "Preferences";
+"Preferences.FormView.Language" = "Language";

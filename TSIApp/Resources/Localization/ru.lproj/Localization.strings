@@ -1,0 +1,19 @@
+"Schedule.TableView.Day" = "День";
+"Schedule.TableView.Week" = "Неделя";
+"Schedule.TableView.Month" = "Месяц";
+
+"Schedule.SettingsView.Filters" = "Фильтры";
+"Schedule.SettingsView.Filter" = "Фильтр";
+
+"Schedule.SettingsView.Group" = "Группа";
+"Schedule.SettingsView.Lecturer" = "Преподаватель";
+"Schedule.SettingsView.Room" = "Аудитория";
+
+"Schedule.SettingsView.LoadingError" = "Во время загрузки данных произошла ошибка";
+
+"Schedule.SettingsView.SelectedGroupIsNotExist" = "Выбранной группы нет";
+"Schedule.SettingsView.SelectedLecturerIsNotExist" = "Выбранного преподавателя нет";
+"Schedule.SettingsView.SelectedRoomIsNotExist" = "Выбранного кабинета нет";
+
+"Preferences.FormView.Preferences" = "Настройки";
+"Preferences.FormView.Language" = "Язык";
