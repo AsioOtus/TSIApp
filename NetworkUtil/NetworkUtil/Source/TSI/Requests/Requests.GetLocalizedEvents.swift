@@ -9,14 +9,14 @@ extension TSI.Requests {
 		public let model: Model
 		
 		public func asURLRequest () throws -> URLRequest {
-			guard var components = URLComponents(string: Self.url.absoluteString) else { throw TSIError.urlRequestCreationFailed("Cannot create URLComponents from URL \"\(Self.url.absoluteString)\"") }
+			guard var components = URLComponents(string: Self.url.absoluteString) else { throw TSINetworkError.urlRequestCreationFailed("Cannot create URLComponents from URL \"\(Self.url.absoluteString)\"") }
 			
 			components.queryItems = model.dictionary.map { (key, value) in
 				URLQueryItem(name: key, value: value)
 			}
 			components.percentEncodedQuery = components.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
 			
-			guard let url = components.url else { throw TSIError.urlRequestCreationFailed("Cannot get URL from components: \"\(components)\"") }
+			guard let url = components.url else { throw TSINetworkError.urlRequestCreationFailed("Cannot get URL from components: \"\(components)\"") }
 			
 			let urlRequest = URLRequest(url: url)
 			return urlRequest

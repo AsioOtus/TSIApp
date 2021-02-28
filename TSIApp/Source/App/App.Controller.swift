@@ -45,20 +45,6 @@ extension App.Controller {
 			)
 			.store(in: &cancellables)
 		
-		serialController.send(TSI.Requests.GetItems.Delegate())
-			.receive(on: DispatchQueue.main)
-			.sink(
-				receiveCompletion: { completion in
-					if case let .failure(error) = completion {
-						App.State.current.scheduleFilterValuesSets = .failed(error)
-					}
-				},
-				receiveValue: {	valuesSets in
-					App.State.current.scheduleFilterValuesSets = .loaded(valuesSets)
-				}
-			)
-			.store(in: &cancellables)
-		
 		App.State.current.scheduleFilterValuesSets = .loading
 	}
 }

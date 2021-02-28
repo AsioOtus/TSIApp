@@ -32,7 +32,27 @@ public protocol TSIResponseModel: ResponseModel {
 }
 
 public extension TSIResponseModel {
+	static func fixResponseData (_ responseData: Data) throws -> Data {
+		guard let responseDataString = String(data: responseData, encoding: .utf8)
+		else { throw TSINetworkError.responseDataAsStringInterpretationFailed(responseData) }
+		
+		var fixedResponseDataString = responseDataString.replacingOccurrences(of: "\\", with: "")
+		
+		guard fixedResponseDataString.count >= 2 else { throw TSINetworkError.responseFixingFailed(error: "", dataString: responseDataString) }
+		fixedResponseDataString = fixedResponseDataString.replacingOccurrences(of: ")(", with: "")
+		
+		guard fixedResponseDataString.count >= 3 else { throw TSINetworkError.responseFixingFailed(error: "", dataString: responseDataString) }
+		fixedResponseDataString.removeLast(3)
+		
+		guard fixedResponseDataString.count >= 7 else { throw TSINetworkError.responseFixingFailed(error: "", dataString: responseDataString) }
+		fixedResponseDataString.removeFirst(7)
+		
+		let fixedResponseData = fixedResponseDataString.data(using: .utf8)!
+		return fixedResponseData
+	}
+	
 	init (_ data: Data) throws {
-		self = try JSONDecoder().decode(Self.self, from: data)
+		let fixedData = try Self.fixResponseData(data)
+		self = try JSONDecoder().decode(Self.self, from: fixedData)
 	}
 }
