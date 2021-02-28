@@ -1,9 +1,9 @@
-import Networks
+import NetworkUtil
 import SwiftDate
 
 
 
-extension Requests.TSI.GetLocalizedEvents {
+extension TSI.Requests.GetLocalizedEvents {
 	struct Delegate: TSIRequestDelegate {
 		let fromDate: DateInRegion
 		let toDate: DateInRegion
@@ -13,7 +13,7 @@ extension Requests.TSI.GetLocalizedEvents {
 			self.toDate = toDate
 		}
 		
-		func build () -> GetLocalizedEvents {
+		func request () -> GetLocalizedEvents {
 			let model = GetLocalizedEvents.Model.init(
 				from: Int(fromDate.timeIntervalSince1970),
 				to: Int(toDate.timeIntervalSince1970),
@@ -23,12 +23,12 @@ extension Requests.TSI.GetLocalizedEvents {
 				language: App.State.current.language.backendLanguage.code
 			)
 			
-			let request = GetLocalizedEvents(model: model)
+			let request = GetLocalizedEvents(model)
 			
 			return request
 		}
 		
-		func convert (_ response: GetLocalizedEvents.Response) -> [Schedule.Event.Raw] {
+		func content (_ response: GetLocalizedEvents.Response) -> [Schedule.Event.Raw] {
 			let events = response.model.events.map {
 				Schedule.Event.Raw(
 					date: DateInRegion(seconds: TimeInterval($0.time)),
@@ -53,7 +53,7 @@ extension Requests.TSI.GetLocalizedEvents {
 			self.date = date
 		}
 		
-		func build () -> GetLocalizedEvents {
+		func request () -> GetLocalizedEvents {
 			let (startDate, endDate) = Schedule.IntervalType.day.boundDates(for: date)
 			
 			let model = GetLocalizedEvents.Model.init(
@@ -65,12 +65,12 @@ extension Requests.TSI.GetLocalizedEvents {
 				language: App.State.current.language.backendLanguage.code
 			)
 			
-			let request = GetLocalizedEvents(model: model)
+			let request = GetLocalizedEvents(model)
 			
 			return request
 		}
 		
-		func convert (_ response: GetLocalizedEvents.Response) -> [Schedule.Event.Raw] {
+		func content (_ response: GetLocalizedEvents.Response) -> [Schedule.Event.Raw] {
 			let events = response.model.events.map {
 				Schedule.Event.Raw(
 					date: DateInRegion(seconds: TimeInterval($0.time)),

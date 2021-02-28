@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "group:Packages"
+      name = "Packages">
+      <FileRef
+         location = "group:SwiftUIPager">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:Helpers/Helpers.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/Anton/Development/XCodeProjects/iOS/Personal/TSIApp/UserDefaults/UserDefaultsUtil.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Log/Log.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Errors/Errors.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:/Users/Anton/Development/XCodeProjects/iOS/Personal/TSIApp/Network/Networks.xcodeproj">
+      location = "group:NetworkUtil/NetworkUtil.xcodeproj">
    </FileRef>
    <FileRef
       location = "container:TSIApp.xcodeproj">

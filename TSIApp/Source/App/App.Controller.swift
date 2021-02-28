@@ -1,7 +1,8 @@
 import Combine
-import Networks
+import BaseNetworkUtil
+import NetworkUtil
 import UserDefaultsUtil
-import Log
+import LoggingUtil
 
 
 
@@ -11,6 +12,8 @@ extension App {
 		private init () { }
 		
 		private var cancellables = Set<AnyCancellable>()
+		
+		let serialController = Controllers.Serial(settings: .init(controllers: .init(loggingProvider: baseNetworkUtilLogger)))
 	}
 }
 
@@ -28,7 +31,22 @@ extension App.Controller {
 
 extension App.Controller {
 	func loadScheduleFilterValuesSets () {
-		Requests.TSI.SerialController.shared.send(Requests.TSI.GetItems.Delegate())
+		serialController.send(TSI.Requests.GetItems.Delegate())
+			.receive(on: DispatchQueue.main)
+			.sink(
+				receiveCompletion: { completion in
+					if case let .failure(error) = completion {
+						App.State.current.scheduleFilterValuesSets = .failed(error)
+					}
+				},
+				receiveValue: {	valuesSets in
+					App.State.current.scheduleFilterValuesSets = .loaded(valuesSets)
+				}
+			)
+			.store(in: &cancellables)
+		
+		serialController.send(TSI.Requests.GetItems.Delegate())
+			.receive(on: DispatchQueue.main)
 			.sink(
 				receiveCompletion: { completion in
 					if case let .failure(error) = completion {
@@ -49,27 +67,23 @@ extension App.Controller {
 
 private extension App.Controller {
 	func configureApp () {
-		configureLogging()
 		configureUserDefaults()
 		
 		loadScheduleFilterValuesSets()
 	}
 	
-	func configureLogging () {
-		Log.default.settings = .init(prefix: App.Info.current.name)
-	}
-	
 	func configureUserDefaults () {
-		MTUserDefaults.settings = .init(items:
+		UserDefaultsUtil.globalSettings =
 			.init(
-				itemKeyPrefixProvider: App.Info.current.identifier,
+				items: .init(
+					prefix: App.Info.current.identifier
+				),
 				logging: .init(
 					enable: true,
-					level: .default,
 					enableValuesLogging: true,
-					loggingProvider: MTUserDefaults.StandardLoggingProvider(prefix: App.Info.current.name)
+					level: .debug,
+					loggingProvider: userDefaultUtilLogger
 				)
 			)
-		)
 	}
 }

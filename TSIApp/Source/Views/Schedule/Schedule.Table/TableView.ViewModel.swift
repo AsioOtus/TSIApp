@@ -1,8 +1,9 @@
 import SwiftUI
 import Combine
 import SwiftDate
-import Networks
-import Log
+import BaseNetworkUtil
+import NetworkUtil
+import LoggingUtil
 
 
 
@@ -116,7 +117,7 @@ extension Schedule.Table.TableView {
 		func load (_ period: Schedule.Table.Period) {
 			self.updateMonth({ $0.originDate == period.originDate }) { $0.loadingState = .loading }
 			
-			Requests.TSI.Controller.shared.send(Requests.TSI.GetLocalizedEvents.MonthDelegate(date: period.originDate))
+			Controllers.Serial().send(TSI.Requests.GetLocalizedEvents.MonthDelegate(date: period.originDate))
 				.sink(
 					receiveCompletion: { completion in
 						if case .failure(let error) = completion {
@@ -124,7 +125,7 @@ extension Schedule.Table.TableView {
 						}
 					},
 					receiveValue: { rawEvents in
-						Log.default.default("rawEvents received")
+						globalLogger.notice("rawEvents received")
 						
 						let displayEvents = rawEvents.map(self.rawToDisplay)
 						let groupedDisplayEvents = Dictionary(grouping: displayEvents, by: { $0.raw.date.dateAt(.startOfDay) })

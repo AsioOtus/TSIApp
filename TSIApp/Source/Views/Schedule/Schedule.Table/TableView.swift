@@ -1,6 +1,6 @@
 import SwiftUI
 import SwiftDate
-import Log
+import LoggingUtil
 import SwiftUIPager
 
 

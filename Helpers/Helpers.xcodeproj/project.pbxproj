@@ -78,16 +78,8 @@
 			children = (
 				3A1166E624DDB0D4007E0CD6 /* Data.swift */,
 				3A1166CE24DD9D51007E0CD6 /* Optional.swift */,
-				3A1A9FED25A0AE01005FEF1F /* Учеу */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		3A1A9FED25A0AE01005FEF1F /* Учеу */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Учеу";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

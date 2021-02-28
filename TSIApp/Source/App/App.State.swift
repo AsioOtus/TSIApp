@@ -9,29 +9,29 @@ extension App {
 		static var current = State()
 		private init () { }
 		
-		@Published var dateTime = MTUserDefaults.dateTime.loadOrDefault() {
-			didSet { MTUserDefaults.dateTime.save(dateTime) }
+		@Published var dateTime = UserDefaults.dateTime.loadOrDefault() {
+			didSet { UserDefaults.dateTime.save(dateTime) }
 		}
 		
-		@Published var intervalType = MTUserDefaults.intervalType.loadOrDefault() {
-			didSet { MTUserDefaults.intervalType.save(intervalType) }
+		@Published var intervalType = UserDefaults.intervalType.loadOrDefault() {
+			didSet { UserDefaults.intervalType.save(intervalType) }
 		}
 		
 		@Published var scheduleFilterValuesSets: LoadingState<Schedule.FilterValuesSets> = .notInitialized
 		
-		@Published var group: SelectionModel = MTUserDefaults.group.loadOrDefault() {
-			didSet { MTUserDefaults.group.save(group) }
+		@Published var group: SelectionModel = UserDefaults.group.loadOrDefault() {
+			didSet { UserDefaults.group.save(group) }
 		}
-		@Published var lecturer: SelectionModel = MTUserDefaults.lecturer.loadOrDefault() {
-			didSet { MTUserDefaults.lecturer.save(lecturer) }
+		@Published var lecturer: SelectionModel = UserDefaults.lecturer.loadOrDefault() {
+			didSet { UserDefaults.lecturer.save(lecturer) }
 		}
-		@Published var room: SelectionModel = MTUserDefaults.room.loadOrDefault() {
-			didSet { MTUserDefaults.room.save(room) }
+		@Published var room: SelectionModel = UserDefaults.room.loadOrDefault() {
+			didSet { UserDefaults.room.save(room) }
 		}
 		
-		@Published var language: FrontendLanguage = MTUserDefaults.language.loadOrDefault() {
+		@Published var language: FrontendLanguage = UserDefaults.language.loadOrDefault() {
 			didSet {
-				MTUserDefaults.language.save(language)
+				UserDefaults.language.save(language)
 				Local.shared.updateCurrentLanguage(language)
 			}
 		}

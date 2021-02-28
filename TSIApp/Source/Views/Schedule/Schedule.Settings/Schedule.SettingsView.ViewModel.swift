@@ -80,9 +80,9 @@ extension Schedule.SettingsView {
 			selectedLecturer = App.State.current.lecturer
 			selectedRoom = App.State.current.room
 			
-			groupFilterText = MTUserDefaults.groupsFilter.loadOrDefault()
-			lecturerFilterText = MTUserDefaults.lecturersFilter.loadOrDefault()
-			roomFilterText = MTUserDefaults.roomFilter.loadOrDefault()
+			groupFilterText = UserDefaults.groupsFilter.loadOrDefault()
+			lecturerFilterText = UserDefaults.lecturersFilter.loadOrDefault()
+			roomFilterText = UserDefaults.roomFilter.loadOrDefault()
 		}
 		
 		func reset () {
@@ -104,9 +104,9 @@ extension Schedule.SettingsView {
 			App.State.current.lecturer = selectedLecturer
 			App.State.current.room = selectedRoom
 			
-			MTUserDefaults.groupsFilter.save(groupFilterText)
-			MTUserDefaults.lecturersFilter.save(lecturerFilterText)
-			MTUserDefaults.roomFilter.save(roomFilterText)
+			UserDefaults.groupsFilter.save(groupFilterText)
+			UserDefaults.lecturersFilter.save(lecturerFilterText)
+			UserDefaults.roomFilter.save(roomFilterText)
 		}
 	}
 }

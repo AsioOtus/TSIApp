@@ -1,5 +1,5 @@
 import UIKit
-import Log
+import LoggingUtil
 
 
 
@@ -9,7 +9,7 @@ extension App {
 		private(set) static var current: Delegate!
 		
 		func application (_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-			Log.default.default("APPLICATION STARTED")
+			globalLogger.notice("APPLICATION STARTED")
 			
 			Self.saveAppDelegateInstanceLink(application)
 			
