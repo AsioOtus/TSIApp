@@ -2,8 +2,26 @@
 "Schedule.TableView.Week" = "Неделя";
 "Schedule.TableView.Month" = "Месяц";
 
+"Schedule.TableView.LoadingFailed" = "Загрузка не удалась: %@";
+
+"Schedule.TableView.NoLectures" = "Лекций нет";
+"Schedule.TableView.WithoutLectures" = "без лекций";
+
+"Schedule.TableView.NoFilterSelected" = "Не выбран фильтр расписания";
+"Schedule.TableView.FilterSetInstruction.Start" = "Для выбора фильтра нажмите на значок";
+"Schedule.TableView.FilterSetInstruction.End" = "в левом верхнем углу экрана";
+
+"Schedule.SelectDateView.Title" = "Выбор даты";
+"Schedule.SelectDateView.DatePickerLabel" = "Дата";
+
+"Schedule.SelectDateView.TodayButton" = "Сегодня";
+"Schedule.SelectDateView.TomorrowButton" = "Завтра";
+"Schedule.SelectDateView.TheDayAfterTomorrowButton" = "Послезавтра";
+
+"Schedule.SettingsView.Title" = "Настройки расписания";
+
 "Schedule.SettingsView.Filters" = "Фильтры";
-"Schedule.SettingsView.Filter" = "Фильтр";
+"Schedule.SettingsView.EnterFilter" = "Нажмите для поиска";
 
 "Schedule.SettingsView.Group" = "Группа";
 "Schedule.SettingsView.Lecturer" = "Преподаватель";
@@ -15,5 +33,13 @@
 "Schedule.SettingsView.SelectedLecturerIsNotExist" = "Выбранного преподавателя нет";
 "Schedule.SettingsView.SelectedRoomIsNotExist" = "Выбранного кабинета нет";
 
-"Preferences.FormView.Preferences" = "Настройки";
-"Preferences.FormView.Language" = "Язык";
+"Schedule.SettingsView.EmptyLecturesDisplaying" = "Отображение пустых лекций";
+
+"Schedule.SettingsView.EmptyLecturesDisplaying.NoneLectures" = "Не показывать";
+"Schedule.SettingsView.EmptyLecturesDisplaying.UntilNonEmptyLecture" = "Первые";
+"Schedule.SettingsView.EmptyLecturesDisplaying.AllLectures" = "Все";
+
+"Preferences.PreferencesView.Title" = "Настройки приложения";
+"Preferences.PreferencesView.Language" = "Язык";
+"Preferences.PreferencesView.SelectLanguage" = "Язык приложения";
+"Preferences.PreferencesView.About" = "О приложении";

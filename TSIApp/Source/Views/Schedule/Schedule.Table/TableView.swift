@@ -2,83 +2,144 @@ import SwiftUI
 import SwiftDate
 import LoggingUtil
 import SwiftUIPager
-
-
+import PartialSheet
 
 extension Schedule.Table {
 	struct TableView: View {
-		@EnvironmentObject private var appState: App.State
-		@StateObject private var vm = ViewModel()
+		@EnvironmentObject var appState: App.State
+		@ObservedObject var vm: ViewModel
 		
-		init () {
+		@State var isPresentingSettingsView = false
+		@State var isPresentingDateView = false
+		
+		@ObservedObject var sheetManager: PartialSheetManager = PartialSheetManager()
+		
+		init (vm: ViewModel) {
+			self.vm = vm
+			
 			UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.black], for: .selected)
 			UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
 		}
 		
 		var body: some View {
 			NavigationView {
-				VStack {
-					Picker (selection: $appState.intervalType, label: Text("")) {
+				VStack(spacing: 0) {
+					Picker (selection: $vm.appState.intervalType, label: Text("")) {
 						ForEach(Schedule.IntervalType.allCases, id: \.self) { intervalType in
-							Text(Local[intervalType.localizationKey]).foregroundColor(.white)
+							Text(Local[intervalType.localizationKey])
+								.foregroundColor(.white)
 						}
 					}
 					.pickerStyle(SegmentedPickerStyle())
 					.labelsHidden()
 					.padding()
-					.background(App.colorScheme.main.color)
+					.background(App.colorScheme.main.color.edgesIgnoringSafeArea([.leading, .trailing]))
 					
-					Pager(page: $vm.currentPeriodIndex, data: vm.currentPeriods,  id: \.self) { period in
-//						Text("\(item)")
-//							.frame(minWidth: 0,
-//								   maxWidth: .infinity,
-//								   minHeight: 0,
-//								   maxHeight: .infinity,
-//								   alignment: .topLeading
-//							)
-//							.background(Color(hue: .random(in: 0...0.99), saturation: .random(in: 0...0.99), brightness: 0.5))
+					Pager(page: vm.page, data: vm.periodViewModels, id: \.period) { periodVM in
+						Schedule.Table.PeriodView(vm: periodVM)
 					}
-//					.onDraggingEnded(vm.updateItems)
-					
-//					TabView {
-//						ForEach(vm.currentPeriods, id: \.originDate) { period in
-//							PeriodView(period: period)
-//								.onAppear {
-//									Log.default.default(period.originDate.toFormat("dd.MM.yyyy"))
-//								}
-//						}
-//					}
-//					.tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-//					.id(UUID())
+					.draggingAnimation(.standard(duration: 0.5))
+					.onPageChanged { i in
+						withAnimation {	vm.pageChanged(i) }
+					}
+					.padding(0)
+					.edgesIgnoringSafeArea(.all)
 				}
-				.navigationBarTitle(Text("Lecturer name"), displayMode: .inline)
-				.navigationBarItems(leading: EmptyView(), trailing: ScheduleSettingsButtonView())
+				.navigationBarTitle(navigationBarTitleText, displayMode: .inline)
+				.navigationBarItems(leading: scheduleSettingsButton, trailing: todayButton)
+				.toolbar {
+					ToolbarItem(placement: .principal) {
+						title
+					}
+				}
 				.navigationBarColor(App.colorScheme.main)
 			}
-			.background(App.colorScheme.main.color)
+			.environmentObject(sheetManager)
+			.sheet(isPresented: $isPresentingDateView) {
+				Schedule.Table.SelectDateView(vm: .init(appState: appState), isShown: $isPresentingDateView)
+			}
+			.sheet(isPresented: $isPresentingSettingsView) {
+				Schedule.SettingsView(vm: .init(appState: appState), isShown: $isPresentingSettingsView)
+			}
+		}
+		
+		var todayButton: some View {
+			Button(action: {
+				isPresentingDateView = true
+			}) {
+				Image.calendar.font(.system(size: 24))
+			}
+		}
+		
+		var scheduleSettingsButton: some View {
+			Button(action: {
+				self.isPresentingSettingsView = true
+			}) {
+				Image.sliders.font(.system(size: 24))
+			}
+		}
+		
+		var title: some View {
+			VStack {
+				HStack {
+					if !vm.appState.group.value.isEmpty {
+						Text(vm.appState.group.value)
+							.font(.headline.weight(.bold))
+					}
+					
+					if !vm.appState.group.value.isEmpty && !vm.appState.room.value.isEmpty {
+						Text("|")
+							.foregroundColor(.gray)
+					}
+					
+					if !vm.appState.room.value.isEmpty {
+						Text(vm.appState.room.value)
+							.font(.headline.weight(.bold))
+					}
+				}
+				
+				if vm.appState.lecturer != .empty {
+					Text(vm.appState.lecturer.value)
+				}
+			}
+			.foregroundColor(.white)
 		}
 	}
 }
 
-
-
-fileprivate struct ScheduleSettingsButtonView: View {
-	@State private var isPresentingSettingsView = false
-	
-	init () { }
-	
-	var body: some View {
-		Button(action: {
-			self.isPresentingSettingsView = true
-		}) {
-			Image.sliders.font(.system(size: 24))
-		}.sheet(isPresented: $isPresentingSettingsView) {
-			Schedule.SettingsView(isShown: $isPresentingSettingsView)
+extension Schedule.Table.TableView {
+	struct TitleView: View {
+		let groupName: String
+		let roomIndex: String
+		
+		var body: some View	{
+			HStack {
+				if !groupName.isEmpty {
+					Text(groupName)
+				}
+				
+				if !roomIndex.isEmpty {
+					Text(roomIndex)
+						.bold()
+				}
+			}
 		}
 	}
+	
+	var navigationBarTitleText: String {
+		var text = [String]()
+		
+		if !vm.appState.group.value.isEmpty {
+			text.append(vm.appState.group.value)
+		}
+		
+		if !vm.appState.room.value.isEmpty {
+			text.append(vm.appState.room.value)
+		}
+		
+		return text.joined(separator: " – ")
+	}
 }
-
-
 
 struct NavigationBarModifier: ViewModifier {
 	

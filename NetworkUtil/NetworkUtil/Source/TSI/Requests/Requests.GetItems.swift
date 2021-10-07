@@ -1,14 +1,16 @@
 extension TSI.Requests {
 	public struct GetItems: TSIRequest {
-		public typealias GetItems = TSI.Requests.GetItems
-		
 		public init () { }
 		
 		public struct Response: TSIResponse {			
+			public var data: Data
+			public var urlResponse: URLResponse
 			public let model: Model
 			
-			public init (_ model: Model) {
-				self.model = model
+			public init (_ data: Data, _ urlResponse: URLResponse) throws {
+				self.urlResponse = urlResponse
+				self.data = data
+				self.model = try Self.Model(data)
 			}
 			
 			public struct Model: TSIResponseModel {

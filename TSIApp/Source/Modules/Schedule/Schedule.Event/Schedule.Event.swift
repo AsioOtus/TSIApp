@@ -1,3 +1,0 @@
-extension Schedule {
-	struct Event { }
-}

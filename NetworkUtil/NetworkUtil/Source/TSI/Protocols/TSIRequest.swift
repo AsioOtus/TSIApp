@@ -1,7 +1,7 @@
 import Helpers
 import BaseNetworkUtil
 
-public protocol TSIRequest: Request where Response: TSIResponse { }
+public protocol TSIRequest: Request { }
 
 extension TSIRequest {
 	static var method: String { "GET" }
@@ -9,21 +9,14 @@ extension TSIRequest {
 	static var name: String { String(describing: Self.self) }
 	static var url: URL { URL(string: address).unwrap("Cannot createURL from address: \"\(address)\" for request \(name)").appendingPathComponent(name) }
 	
-	public func urlRequest () throws -> URLRequest {
+	public var urlRequest: URLRequest {
 		URLRequest(url: Self.url)
 	}
 }
 
 
 
-public protocol TSIResponse: ModelableResponse where Model: TSIResponseModel { }
-
-extension TSIResponse {
-	public init (_ urlResponse: URLResponse, _ data: Data) throws {
-		let model = try Self.Model(data)
-		self.init(model)
-	}
-}
+public protocol TSIResponse: ModellableResponse where Model: TSIResponseModel { }
 
 
 

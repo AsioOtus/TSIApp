@@ -4,11 +4,13 @@ import SwiftUIRefresh
 
 extension Schedule {
 	struct SettingsView: View {
-		@ObservedObject private var viewModel = Schedule.SettingsView.ViewModel()
+		@EnvironmentObject var appState: App.State
+		@ObservedObject private var vm: ViewModel
 		
 		@Binding var isShown: Bool
 		
-		init (isShown: Binding<Bool>) {
+		init (vm: ViewModel, isShown: Binding<Bool>) {
+			self.vm = vm
 			self._isShown = isShown
 		}
 		
@@ -16,57 +18,55 @@ extension Schedule {
 			NavigationView {
 				Form {
 					Section(header: Text(Local[.filters].uppercased())) {
-						if viewModel.filterValuesSetsLoadingError != nil {
+						if vm.filterValuesSetsLoadingError != nil {
 							ErrorView(message: Local[.filterValuesSetsLoadingError])
 						}
 						
 						SelectorView(
-							items: viewModel.groups,
-							selectedItem: $viewModel.selectedGroup,
-							filterText: $viewModel.groupFilterText,
+							items: vm.groups,
+							selectedItem: $vm.selectedGroup,
+							filterText: $vm.groupFilterText,
 							labelText: Local[.group],
 							itemIsNotExistLabelText: Local[.selectedGroupIsNotExist]
 						)
 						
 						SelectorView(
-							items: viewModel.lecturers,
-							selectedItem: $viewModel.selectedLecturer,
-							filterText: $viewModel.lecturerFilterText,
+							items: vm.lecturers,
+							selectedItem: $vm.selectedLecturer,
+							filterText: $vm.lecturerFilterText,
 							labelText: Local[.lecturer],
 							itemIsNotExistLabelText: Local[.selectedLecturerIsNotExist]
 						)
 						
 						SelectorView(
-							items: viewModel.rooms,
-							selectedItem: $viewModel.selectedRoom,
-							filterText: $viewModel.roomFilterText,
+							items: vm.rooms,
+							selectedItem: $vm.selectedRoom,
+							filterText: $vm.roomFilterText,
 							labelText: Local[.room],
 							itemIsNotExistLabelText: Local[.selectedRoomIsNotExist]
 						)
-					}
-					
-					Section {
+						
 						HStack {
 							Spacer()
-							Button(action: { self.viewModel.reset() }, label: { Text(Local[.reset]) })
+							Button(action: { self.vm.reset() }, label: { Text(Local[.reset]) })
 								.foregroundColor(.red)
 							Spacer()
 						}
 					}
 				}
-				.navigationBarTitle(Text(Local[.settings]), displayMode: .inline)
+				.navigationBarTitle(Text(Local[settings: .title]), displayMode: .inline)
 				.navigationBarItems(
 					leading: Button(action: {
 						self.isShown = false
 					}) { Text(Local[.cancel]) },
 					trailing: Button(action: {
-						self.viewModel.done()
+						self.vm.done()
 						self.isShown = false
 					}) { Text(Local[.done])	}
 				)
 				.navigationBarColor(App.colorScheme.main)
-				.pullToRefresh(isShowing: self.$viewModel.isLoadingIndicatorVisible) {
-					self.viewModel.refreshValues()
+				.pullToRefresh(isShowing: self.$vm.isLoadingIndicatorVisible) {
+					self.vm.refreshValues()
 				}
 			}
 		}
@@ -83,7 +83,7 @@ fileprivate struct SelectorView: View {
 	
 	private var displayedItems: [SelectionModel] {
 		guard let items = items else { return [] }
-		return !filterText.isEmpty ? ([.empty] + items).filter { $0.value.lowercased().contains(filterText.lowercased()) } : ([.empty] + items)
+		return !filterText.isEmpty ? [.empty] + items.filter { $0.value.lowercased().contains(filterText.lowercased()) } : ([.empty] + items)
 	}
 	
 	private var isItemNotExist: Bool {
@@ -129,7 +129,7 @@ fileprivate struct SelectorView: View {
 				VStack {
 					HStack {
 						TextField(
-							Local[.filter],
+							Local[.enterFilter],
 							text: $filterText
 						)
 						.multilineTextAlignment(.center)

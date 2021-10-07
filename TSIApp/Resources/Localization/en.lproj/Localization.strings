@@ -4,8 +4,24 @@
 
 "Schedule.TableView.LoadingFailed" = "Loading failed: %@";
 
+"Schedule.TableView.NoLectures" = "No lectures";
+"Schedule.TableView.WithoutLectures" = "without lectures";
+
+"Schedule.TableView.NoFilterSelected" = "No schedule filter selected";
+"Schedule.TableView.FilterSetInstruction.Start" = "To select a filter, click on the";
+"Schedule.TableView.FilterSetInstruction.End" = "button in the upper left corner of the screen";
+
+"Schedule.SelectDateView.Title" = "Picking a date";
+"Schedule.SelectDateView.DatePickerLabel" = "Date";
+
+"Schedule.SelectDateView.TodayButton" = "Today";
+"Schedule.SelectDateView.TomorrowButton" = "Tomorrow";
+"Schedule.SelectDateView.TheDayAfterTomorrowButton" = "The day after tomorrow";
+
+"Schedule.SettingsView.Title" = "Schedule settings";
+
 "Schedule.SettingsView.Filters" = "Filters";
-"Schedule.SettingsView.Filter" = "Filter";
+"Schedule.SettingsView.EnterFilter" = "Touch for searching";
 
 "Schedule.SettingsView.Group" = "Group";
 "Schedule.SettingsView.Lecturer" = "Lecturer";
@@ -17,5 +33,13 @@
 "Schedule.SettingsView.SelectedLecturerIsNotExist" = "Selected lecturer is not exist";
 "Schedule.SettingsView.SelectedRoomIsNotExist" = "Selected room is not exist";
 
-"Preferences.FormView.Preferences" = "Preferences";
-"Preferences.FormView.Language" = "Language";
+"Schedule.SettingsView.EmptyLecturesDisplaying" = "Empty lectures displaying";
+
+"Schedule.SettingsView.EmptyLecturesDisplaying.NoneLectures" = "None";
+"Schedule.SettingsView.EmptyLecturesDisplaying.UntilNonEmptyLecture" = "First";
+"Schedule.SettingsView.EmptyLecturesDisplaying.AllLectures" = "All";
+
+"Preferences.PreferencesView.Title" = "Preferences";
+"Preferences.PreferencesView.Language" = "Language";
+"Preferences.PreferencesView.SelectLanguage" = "App language";
+"Preferences.PreferencesView.About" = "About";

@@ -1,7 +1,7 @@
 import NetworkUtil
 import SwiftDate
-
-
+import BaseNetworkUtil
+import Multitool
 
 extension TSI.Requests.GetLocalizedEvents {
 	struct Delegate: TSIRequestDelegate {
@@ -13,24 +13,24 @@ extension TSI.Requests.GetLocalizedEvents {
 			self.toDate = toDate
 		}
 		
-		func request () -> GetLocalizedEvents {
+		func request (_ requestInfo: NetworkController.RequestInfo) throws -> GetLocalizedEvents {
 			let model = GetLocalizedEvents.Model.init(
 				from: Int(fromDate.timeIntervalSince1970),
 				to: Int(toDate.timeIntervalSince1970),
 				groups: [App.State.current.group.key],
 				lecturers: [App.State.current.lecturer.key],
 				rooms: [App.State.current.room.key],
-				language: App.State.current.language.backendLanguage.code
+				language: App.State.current.language.appLanguageOrDefault.backendLanguage.code
 			)
 			
-			let request = GetLocalizedEvents(model)
+			let request = try GetLocalizedEvents(model)
 			
 			return request
 		}
 		
-		func content (_ response: GetLocalizedEvents.Response) -> [Schedule.Event.Raw] {
+		func content (_ response: GetLocalizedEvents.Response, _ requestInfo: NetworkController.RequestInfo) -> [Schedule.Event.Info] {			
 			let events = response.model.events.map {
-				Schedule.Event.Raw(
+				Schedule.Event.Info(
 					date: DateInRegion(seconds: TimeInterval($0.time)),
 					groups: $0.groups,
 					lecturer: $0.lecturer,
@@ -46,33 +46,33 @@ extension TSI.Requests.GetLocalizedEvents {
 		}
 	}
 	
-	struct MonthDelegate: TSIRequestDelegate {
-		let date: DateInRegion
+	struct CustomDelegate: TSIRequestDelegate {
+		let fromDate: DateInRegion
+		let toDate: DateInRegion
 		
-		init (date: DateInRegion) {
-			self.date = date
+		init (fromDate: DateInRegion, toDate: DateInRegion) {
+			self.fromDate = fromDate
+			self.toDate = toDate
 		}
 		
-		func request () -> GetLocalizedEvents {
-			let (startDate, endDate) = Schedule.IntervalType.day.boundDates(for: date)
-			
+		func request (_ requestInfo: NetworkController.RequestInfo) throws -> GetLocalizedEvents {
 			let model = GetLocalizedEvents.Model.init(
-				from: Int(startDate.timeIntervalSince1970),
-				to: Int(endDate.timeIntervalSince1970),
-				groups: [App.State.current.group.key],
-				lecturers: [App.State.current.lecturer.key],
-				rooms: [App.State.current.room.key],
-				language: App.State.current.language.backendLanguage.code
+				from: Int(fromDate.timeIntervalSince1970),
+				to: Int(toDate.timeIntervalSince1970),
+				groups: [],
+				lecturers: [],
+				rooms: [],
+				language: App.State.current.language.appLanguageOrDefault.backendLanguage.code
 			)
 			
-			let request = GetLocalizedEvents(model)
+			let request = try GetLocalizedEvents(model)
 			
 			return request
 		}
 		
-		func content (_ response: GetLocalizedEvents.Response) -> [Schedule.Event.Raw] {
+		func content (_ response: GetLocalizedEvents.Response, _ requestInfo: NetworkController.RequestInfo) -> [Schedule.Event.Info] {
 			let events = response.model.events.map {
-				Schedule.Event.Raw(
+				Schedule.Event.Info(
 					date: DateInRegion(seconds: TimeInterval($0.time)),
 					groups: $0.groups,
 					lecturer: $0.lecturer,

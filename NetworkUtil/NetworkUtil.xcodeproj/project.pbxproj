@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3A5988D525C48B4900373FFA /* NetworkUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A5988D325C48B4900373FFA /* NetworkUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3A5988ED25C48C7200373FFA /* BaseNetworkUtil in Frameworks */ = {isa = PBXBuildFile; productRef = 3A5988EC25C48C7200373FFA /* BaseNetworkUtil */; };
-		3A5988EE25C48C7200373FFA /* BaseNetworkUtil in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 3A5988EC25C48C7200373FFA /* BaseNetworkUtil */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		3A5988F525C48CB000373FFA /* Requests.GetLocalizedEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5988F325C48CB000373FFA /* Requests.GetLocalizedEvents.swift */; };
 		3A5988F625C48CB000373FFA /* Requests.GetItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5988F425C48CB000373FFA /* Requests.GetItems.swift */; };
 		3A5988F825C48CB800373FFA /* TSI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5988F725C48CB800373FFA /* TSI.swift */; };
@@ -17,6 +15,7 @@
 		3A59890125C48D2C00373FFA /* TSI.Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A59890025C48D2C00373FFA /* TSI.Requests.swift */; };
 		3A59894525C4951C00373FFA /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 3A59894425C4951C00373FFA /* SwiftyJSON */; };
 		3A59894825C4961500373FFA /* TSINetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A59894725C4961500373FFA /* TSINetworkError.swift */; };
+		3AE25F9026E8074700859A13 /* BaseNetworkUtil in Frameworks */ = {isa = PBXBuildFile; productRef = 3AE25F8F26E8074700859A13 /* BaseNetworkUtil */; };
 		3AE30EE125C497C8009B22FB /* TSIRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5988FE25C48CF600373FFA /* TSIRequestFactory.swift */; };
 		3AE30EE225C497C8009B22FB /* TSIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5988FD25C48CF600373FFA /* TSIRequest.swift */; };
 /* End PBXBuildFile section */
@@ -28,7 +27,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3A5988EE25C48C7200373FFA /* BaseNetworkUtil in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -54,8 +52,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AE25F9026E8074700859A13 /* BaseNetworkUtil in Frameworks */,
 				3A59894525C4951C00373FFA /* SwiftyJSON in Frameworks */,
-				3A5988ED25C48C7200373FFA /* BaseNetworkUtil in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,8 +171,8 @@
 			);
 			name = NetworkUtil;
 			packageProductDependencies = (
-				3A5988EC25C48C7200373FFA /* BaseNetworkUtil */,
 				3A59894425C4951C00373FFA /* SwiftyJSON */,
+				3AE25F8F26E8074700859A13 /* BaseNetworkUtil */,
 			);
 			productName = NetworkUtil;
 			productReference = 3A5988D025C48B4900373FFA /* NetworkUtil.framework */;
@@ -205,6 +203,7 @@
 			packageReferences = (
 				3A5988EB25C48C7200373FFA /* XCRemoteSwiftPackageReference "Multitool" */,
 				3A59894325C4951C00373FFA /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				3AE25F8E26E8074700859A13 /* XCRemoteSwiftPackageReference "BaseNetworkUtil" */,
 			);
 			productRefGroup = 3A5988D125C48B4900373FFA /* Products */;
 			projectDirPath = "";
@@ -458,18 +457,26 @@
 				version = 5.0.0;
 			};
 		};
+		3AE25F8E26E8074700859A13 /* XCRemoteSwiftPackageReference "BaseNetworkUtil" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AsioOtus/BaseNetworkUtil.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3A5988EC25C48C7200373FFA /* BaseNetworkUtil */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3A5988EB25C48C7200373FFA /* XCRemoteSwiftPackageReference "Multitool" */;
-			productName = BaseNetworkUtil;
-		};
 		3A59894425C4951C00373FFA /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3A59894325C4951C00373FFA /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		3AE25F8F26E8074700859A13 /* BaseNetworkUtil */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3AE25F8E26E8074700859A13 /* XCRemoteSwiftPackageReference "BaseNetworkUtil" */;
+			productName = BaseNetworkUtil;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

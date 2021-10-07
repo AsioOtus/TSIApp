@@ -1,92 +1,157 @@
 import Foundation
 import SwiftDate
 
+extension FrontendLanguage: Codable {
+	enum CodingKeys: CodingKey {
+		case system
+		case app
+	}
+	
+	init (from decoder: Decoder) throws {
+		let container = try decoder.container(keyedBy: CodingKeys.self)
+		let key = container.allKeys.first
+		
+		switch key {
+		case .system:
+			self = .system
+			
+		case .app:
+			let appLanguage = try container.decode(AppLanguage.self, forKey: .app)
+			self = .app(appLanguage)
+			
+		default:
+			throw DecodingError.dataCorrupted(
+				DecodingError.Context(codingPath: container.codingPath,	debugDescription: "Unabled to decode enum.")
+			)
+		}
+	}
+	
+	func encode (to encoder: Encoder) throws {
+		var container = encoder.container(keyedBy: CodingKeys.self)
+		
+		switch self {
+		case .system:
+			try container.encode(true, forKey: .system)
+			
+		case .app(let language):
+			try container.encode(language, forKey: .app)
+		}
+	}
+}
 
+extension FrontendLanguage: Equatable { }
 
-enum FrontendLanguage: String, CaseIterable, Codable {
+enum FrontendLanguage {
 	case system
+	case app(AppLanguage)
+	
+	var code: String? {
+		switch self {
+		case .system: return Locale.current.languageCode
+		case .app(let language): return language.code
+		}
+	}
+	
+	var appLanguage: AppLanguage? {
+		switch self {
+		case .system: return nil
+		case .app(let language): return language
+		}
+	}
+	
+	var appLanguageOrSystem: AppLanguage? {
+		switch self {
+		case .system:
+			let currentLanguageCode = Locale.current.languageCode
+			if let appLanguage = AppLanguage.availableLanguages.first(where: { $0.code == currentLanguageCode }) {
+				return appLanguage
+			}
+			
+			let preferedLanguages = Locale.preferredLanguages
+			if let appLanguage = AppLanguage.availableLanguages.first(where: { preferedLanguages.contains($0.code) }) {
+				return appLanguage
+			}
+			
+			return nil
+			
+		case .app(let language): return language
+		}
+	}
+	
+	var appLanguageOrDefault: AppLanguage {
+		appLanguage ?? .default
+	}
+	
+	var swiftDateLocale: Locales {
+		switch self {
+		case .system: return .autoUpdating
+		case .app(let language): return language.swiftDateLocale
+		}
+	}
+}
+
+extension FrontendLanguage {
+	var localizationKey: Local.Keys.Common {
+		switch self {
+		case .system: return .system
+		case .app(let language): return language.localizationKey
+		}
+	}
+}
+
+enum AppLanguage: String, CaseIterable, Codable {
 	case russian
 	case english
 	case latvian
 	
-	var code: String? {
-		let code: String?
-		
+	static var `default`: Self { .russian }
+	static var availableLanguages: [Self] { [.russian, .english] }
+	
+	var code: String {
 		switch self {
-		case .system:
-			code = Locale.current.languageCode
-		case .russian:
-			code = "ru"
-		case .english:
-			code = "en"
-		case .latvian:
-			code = "lv"
+		case .russian: return "ru"
+		case .english: return "en"
+		case .latvian: return "lv"
 		}
-		
-		return code
 	}
 	
 	var backendLanguage: BackendLanguage {
-		let language: BackendLanguage
-		
 		switch self {
-		case .system:
-			if let nonSystemLanguage = Self.nonSystemLanguages.first(where: { $0.code == code }) {
-				language = nonSystemLanguage.backendLanguage
-			} else {
-				language = BackendLanguage.default
-			}
-		case .russian:
-			language = .russian
-		case .english:
-			language = .english
-		case .latvian:
-			language = .latvian
+		case .russian: return .russian
+		case .english: return .english
+		case .latvian: return .latvian
 		}
-		
-		return language
 	}
 	
 	var swiftDateLocale: Locales {
-		let locale: Locales
-		
 		switch self {
-		case .system:
-			locale = .autoUpdating
-		case .russian:
-			locale = .russian
-		case .english:
-			locale = .english
-		case .latvian:
-			locale = .latvian
+		case .russian: return .russian
+		case .english: return .english
+		case .latvian: return .latvian
 		}
-		
-		return locale
 	}
 	
-	// Can not be .system case
-	static var `default`: Self { .russian }
-	
-	static var nonSystemLanguages: [Self] { allCases.filter { $0 != .system } }
-}
-
-
-
-extension FrontendLanguage {
-	var localizationKey: Local.Keys.Common {
-		let key: Local.Keys.Common
-		
+	var nativeName: String {
 		switch self {
-		case .system:
-			key = .system
-		case .russian:
-			key = .russian
-		case .english:
-			key = .english
-		case .latvian:
-			key = .latvian
+		case .russian: return "Русский"
+		case .english: return "English"
+		case .latvian: return "Latviešu"
 		}
-		
-		return key
+	}
+	
+	var flagEmoji: String {
+		switch self {
+		case .russian: return "🇷🇺"
+		case .english: return "🇬🇧"
+		case .latvian: return "🇱🇻"
+		}
+	}
+	
+	var localizationKey: Local.Keys.Common {
+		switch self {
+		case .russian: return .russian
+		case .english: return .english
+		case .latvian: return .latvian
+		}
 	}
 }

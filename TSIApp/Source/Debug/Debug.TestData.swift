@@ -69,7 +69,7 @@ extension Debug.TestData {
 //
 //
 //extension Debug.TestData {
-//	static let day = Schedule.Table.Day(
+//	static let day = Schedule.Day(
 //		DateInRegion(),
 //		[
 //			.init(
@@ -123,7 +123,7 @@ extension Debug.TestData {
 //		]
 //	)
 //	
-//	static let regularDay = Schedule.Table.Day(
+//	static let regularDay = Schedule.Day(
 //		DateInRegion(),
 //		[
 //			.init(

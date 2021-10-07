@@ -1,7 +1,9 @@
-enum LoadingState<Value> {
+import Combine
+
+enum LoadingState<LoadingValue, LoadedValue> {
 	case notInitialized
-	case loading
-	case loaded(Value)
+	case loading(LoadingValue)
+	case loaded(LoadedValue)
 	case failed(Error)
 	
 	var isNotInitialized: Bool {
@@ -28,8 +30,8 @@ enum LoadingState<Value> {
 		return isLoading
 	}
 	
-	var value: Value? {
-		let value: Value?
+	var value: LoadedValue? {
+		let value: LoadedValue?
 		
 		if case .loaded(let loadedValue) = self {
 			value = loadedValue
@@ -52,16 +54,29 @@ enum LoadingState<Value> {
 		return error
 	}
 	
-	func map <T> (_ mapping: (Value) -> T) -> LoadingState<T> {
-		let result: LoadingState<T>
+	var stateName: String {
+		switch self {
+		case .notInitialized:
+			return "not initialized"
+		case .loading:
+			return "loading"
+		case .loaded:
+			return "loaded"
+		case .failed:
+			return "failed"
+		}
+	}
+	
+	func map <T> (_ mapping: (LoadedValue) -> T) -> LoadingState<LoadingValue, T> {
+		let result: LoadingState<LoadingValue, T>
 		
 		switch self {
 		case .notInitialized:
 			result = .notInitialized
-		case .loading:
-			result = .loading
-		case .loaded(let value):
-			result = .loaded(mapping(value))
+		case .loading(let loadingValue):
+			result = .loading(loadingValue)
+		case .loaded(let loadedValue):
+			result = .loaded(mapping(loadedValue))
 		case .failed(let error):
 			result = .failed(error)
 		}

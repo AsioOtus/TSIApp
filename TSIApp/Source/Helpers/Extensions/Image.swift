@@ -1,7 +1,5 @@
 import SwiftUI
 
-
-
 extension Image {
 	struct SystemNames {
 		static let mappin = "mappin"
@@ -11,8 +9,6 @@ extension Image {
 		static let mapFill = "map.fill"
 	}
 }
-
-
 
 extension Image {
 	static let calendar = Image(systemName: "calendar")

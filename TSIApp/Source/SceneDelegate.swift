@@ -6,10 +6,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 	func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {		
 		// Use a UIHostingController as window root view controller.
-		if let windowScene = scene as? UIWindowScene {
-			let mainView = MainView()
+		if let windowScene = scene as? UIWindowScene {			
+			let vm = Schedule.Table.TableView.ViewModel(appState: App.State.current)
+			let mainView = MainView(vm).environmentObject(App.State.current)
+			
 		    let window = UIWindow(windowScene: windowScene)
 		    window.rootViewController = MainHostingController(rootView: mainView)
+			
 		    self.window = window
 		    window.makeKeyAndVisible()
 		}

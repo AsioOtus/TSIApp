@@ -1,14 +1,18 @@
 import BaseNetworkUtil
 
 extension TSI.Requests {
-	public struct GetLocalizedEvents: TSIRequest, ModelableRequest {
+	public struct GetLocalizedEvents: TSIRequest {
 		public typealias GetLocalizedEvents = TSI.Requests.GetLocalizedEvents
 		
-		public init (_ model: Model) { self.model = model }
-		
 		public let model: Model
+		public let urlRequest: URLRequest
 		
-		public func asURLRequest () throws -> URLRequest {
+		public init (_ model: Model) throws {
+			self.model = model
+			self.urlRequest = try Self.createUrlRequest(model)
+		}
+		
+		public static func createUrlRequest (_ model: Model) throws -> URLRequest {
 			guard var components = URLComponents(string: Self.url.absoluteString) else { throw TSINetworkError.urlRequestCreationFailed("Cannot create URLComponents from URL \"\(Self.url.absoluteString)\"") }
 			
 			components.queryItems = model.dictionary.map { (key, value) in
@@ -22,7 +26,7 @@ extension TSI.Requests {
 			return urlRequest
 		}
 		
-		public struct Model: RequestModel {
+		public struct Model {
 			public init (from: Int, to: Int, groups: [String], lecturers: [String], rooms: [String], language: String) {
 				self.from = from
 				self.to = to
@@ -70,17 +74,22 @@ extension TSI.Requests {
 
 extension TSI.Requests.GetLocalizedEvents {
 	public struct Response: TSIResponse {
+		public let data: Data
+		public let urlResponse: URLResponse
 		public let model: Model
 		
-		public init (_ model: Model) {
-			self.model = model
+		public init (_ data: Data, _ urlResponse: URLResponse) throws {
+			self.urlResponse = urlResponse
+			self.data = data
+			self.model = try Self.Model(data)
 		}
 		
 		public struct Model: TSIResponseModel {
 			public let events: [Event]
 			
 			public init (_ data: Data) throws {
-				events = try Parser.parse(data)
+				let fixedData = try Self.fixResponseData(data)
+				events = try Parser.parse(fixedData)
 			}
 			
 			public struct Event: Decodable {

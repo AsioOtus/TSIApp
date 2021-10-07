@@ -5,10 +5,12 @@ import UserDefaultsUtil
 
 extension Schedule.SettingsView {
 	class ViewModel: ObservableObject {
+		@ObservedObject var appState: App.State
+		
 		var filterValuesSetsLoadingError: Error? {
 			let resultError: Error?
 			
-			if case .failed(let error) = App.State.current.scheduleFilterValuesSets {
+			if case .failed(let error) = appState.scheduleFilterValuesSets {
 				resultError = error
 			} else {
 				resultError = nil
@@ -20,7 +22,7 @@ extension Schedule.SettingsView {
 		var isFilterValuesSetsLoading: Bool {
 			let result: Bool
 			
-			if case .loading = App.State.current.scheduleFilterValuesSets {
+			if case .loading = appState.scheduleFilterValuesSets {
 				result = true
 			} else {
 				result = false
@@ -34,7 +36,7 @@ extension Schedule.SettingsView {
 		var groups: [SelectionModel]? {
 			let result: [SelectionModel]?
 			
-			if case .loaded(let filterValuesSets) = App.State.current.scheduleFilterValuesSets {
+			if case .loaded(let filterValuesSets) = appState.scheduleFilterValuesSets {
 				result = filterValuesSets.groups
 			} else {
 				result = nil
@@ -45,7 +47,7 @@ extension Schedule.SettingsView {
 		var lecturers: [SelectionModel]? {
 			let result: [SelectionModel]?
 			
-			if case .loaded(let filterValuesSets) = App.State.current.scheduleFilterValuesSets {
+			if case .loaded(let filterValuesSets) = appState.scheduleFilterValuesSets {
 				result = filterValuesSets.lecturers
 			} else {
 				result = nil
@@ -56,7 +58,7 @@ extension Schedule.SettingsView {
 		var rooms: [SelectionModel]? {
 			let result: [SelectionModel]?
 			
-			if case .loaded(let filterValuesSets) = App.State.current.scheduleFilterValuesSets {
+			if case .loaded(let filterValuesSets) = appState.scheduleFilterValuesSets {
 				result = filterValuesSets.rooms
 			} else {
 				result = nil
@@ -75,10 +77,12 @@ extension Schedule.SettingsView {
 		@Published var lecturerFilterText = ""
 		@Published var roomFilterText = ""
 		
-		init () {
-			selectedGroup = App.State.current.group
-			selectedLecturer = App.State.current.lecturer
-			selectedRoom = App.State.current.room
+		init (appState: App.State) {
+			self.appState = appState
+			
+			selectedGroup = appState.group
+			selectedLecturer = appState.lecturer
+			selectedRoom = appState.room
 			
 			groupFilterText = UserDefaults.groupsFilter.loadOrDefault()
 			lecturerFilterText = UserDefaults.lecturersFilter.loadOrDefault()
@@ -100,9 +104,11 @@ extension Schedule.SettingsView {
 		}
 		
 		func done () {
-			App.State.current.group = selectedGroup
-			App.State.current.lecturer = selectedLecturer
-			App.State.current.room = selectedRoom
+			appState.group = selectedGroup
+			appState.lecturer = selectedLecturer
+			appState.room = selectedRoom
+			
+			appState.scheduleFilterValuesUpdated.send(())
 			
 			UserDefaults.groupsFilter.save(groupFilterText)
 			UserDefaults.lecturersFilter.save(lecturerFilterText)

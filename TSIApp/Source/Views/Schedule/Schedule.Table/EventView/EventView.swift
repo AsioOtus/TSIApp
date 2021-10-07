@@ -1,25 +1,19 @@
 import SwiftUI
-
-
+import Combine
 
 extension Schedule.Table {
 	struct EventView: View {
-		let event: Schedule.Table.Day.Event
+		let event: Schedule.Event
 		
 		var body: some View {
-			EmptyEventView(event: event)
-//			switch event.displayEvent {
-//			case .loaded(.some):
-//				FilledEventView(event: event)
-//			case .loaded(.none):
-//				EmptyEventView(event: event)
-//			case .loading:
-//				EmptyView()
-//			case .failed(let error):
-//				EmptyView()
-//			case .notInitialized:
-//				EmptyEventView(event: event)
-//			}
+			switch event {
+			case .empty:
+				EmptyEventView(event: event)
+					.listRowBackground(Color(white: 0.98))
+				
+			case .plain(let eventInfo):
+				PlainEventView(eventInfo: eventInfo)
+			}
 		}
 	}
 }
