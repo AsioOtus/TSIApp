@@ -15,7 +15,7 @@
         "repositoryURL": "https://github.com/AsioOtus/LoggingUtil.git",
         "state": {
           "branch": "master",
-          "revision": "332dff4c1bdb484e6b2d248934808696a024e1dc",
+          "revision": "e7238bef87e985e2e1e86480695eff2e628dc15f",
           "version": null
         }
       },
@@ -74,15 +74,6 @@
         }
       },
       {
-        "package": "WrappingStack",
-        "repositoryURL": "https://github.com/diniska/swiftui-wrapping-stack",
-        "state": {
-          "branch": null,
-          "revision": "530e1d24155bc272af461da4cc1ed25ecce9e3ab",
-          "version": "1.0.1"
-        }
-      },
-      {
         "package": "SwiftUIPager",
         "repositoryURL": "https://github.com/fermoya/SwiftUIPager",
         "state": {
@@ -116,15 +107,6 @@
           "branch": "master",
           "revision": "8f892b3f3ce0dbca9e0a676faf546d883e3ee224",
           "version": null
-        }
-      },
-      {
-        "package": "WrappingHStack",
-        "repositoryURL": "https://github.com/dkk/WrappingHStack",
-        "state": {
-          "branch": null,
-          "revision": "8ad45ec818edfd59a63640b8d7df96df3c8a1c47",
-          "version": "2.1.2"
         }
       }
     ]

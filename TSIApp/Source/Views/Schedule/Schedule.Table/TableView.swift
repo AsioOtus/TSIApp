@@ -69,6 +69,7 @@ extension Schedule.Table {
 			}) {
 				Image.calendar.font(.system(size: 24))
 			}
+			.foregroundColor(.white)
 		}
 		
 		var scheduleSettingsButton: some View {
@@ -77,6 +78,7 @@ extension Schedule.Table {
 			}) {
 				Image.sliders.font(.system(size: 24))
 			}
+			.foregroundColor(.white)
 		}
 		
 		var title: some View {

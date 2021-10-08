@@ -1,5 +1,6 @@
 import UIKit
 import LoggingUtil
+import UserDefaultsUtil
 
 extension App {
 	@UIApplicationMain
@@ -7,10 +8,9 @@ extension App {
 		private(set) static var current: Delegate!
 		
 		func application (_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-			LaunchCounter.default.next(cycle: Date().toFormat("HH:mm:ss"))
-			LaunchCounter.default.launch()
-			
-			Logging.defaultLogger.notice("APPLICATION STARTED")
+			LaunchCounter.default.launch(cycle: Info.current.version)
+
+			Logging.defaultLogger.notice("APPLICATION STARTED | Launch number: \(LaunchCounter.default.count) – \(LaunchCounter.default.label)")
 			
 			Self.saveAppDelegateInstanceLink(application)
 			

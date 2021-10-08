@@ -65,8 +65,6 @@
 		3AAC8AD924F7C5A700CF7CEE /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAC8AD824F7C5A700CF7CEE /* Event.swift */; };
 		3AB3604224E5DD24004D5811 /* BackendLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB3604124E5DD24004D5811 /* BackendLanguage.swift */; };
 		3AB65CD626C9C3C60014C9E4 /* PeriodView.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB65CD526C9C3C60014C9E4 /* PeriodView.ViewModel.swift */; };
-		3AC4CA3126EAB34A00A153CC /* WrappingStack in Frameworks */ = {isa = PBXBuildFile; productRef = 3AC4CA3026EAB34A00A153CC /* WrappingStack */; };
-		3AC4CA3426EAB42100A153CC /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = 3AC4CA3326EAB42100A153CC /* WrappingHStack */; };
 		3AC4CA4A26EB6FC600A153CC /* MainHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC4CA4926EB6FC600A153CC /* MainHostingController.swift */; };
 		3ADB7D4224C43E840032E560 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB7D4124C43E840032E560 /* UIColor.swift */; };
 		3ADB7D4C24C770EC0032E560 /* Schedule.FilterValuesSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB7D4B24C770EC0032E560 /* Schedule.FilterValuesSets.swift */; };
@@ -224,9 +222,7 @@
 				3A8962B826FB53D70036BE08 /* PartialSheet in Frameworks */,
 				3A6AAE8A250171C900A3A795 /* SwiftDate in Frameworks */,
 				3A24CC9826C576760086E778 /* DequeModule in Frameworks */,
-				3AC4CA3426EAB42100A153CC /* WrappingHStack in Frameworks */,
 				3AE25F8D26E803F000859A13 /* LoggingUtil in Frameworks */,
-				3AC4CA3126EAB34A00A153CC /* WrappingStack in Frameworks */,
 				3AF003C426DD757600D515B1 /* SwiftUIPullToRefresh in Frameworks */,
 				3AE30EE325C4988B009B22FB /* NetworkUtil.framework in Frameworks */,
 				3A1102862598E928006FF25E /* SwiftUIPager in Frameworks */,
@@ -634,8 +630,6 @@
 				3AE25F8826E803D400859A13 /* Multitool */,
 				3AE25F8C26E803F000859A13 /* LoggingUtil */,
 				3AE25F9226E8080B00859A13 /* UserDefaultsUtil */,
-				3AC4CA3026EAB34A00A153CC /* WrappingStack */,
-				3AC4CA3326EAB42100A153CC /* WrappingHStack */,
 				3A8962B726FB53D70036BE08 /* PartialSheet */,
 			);
 			productName = TSIApp;
@@ -675,8 +669,6 @@
 				3AF003C226DD757600D515B1 /* XCRemoteSwiftPackageReference "SwiftUI-PullToRefresh" */,
 				3AE25F8B26E803F000859A13 /* XCRemoteSwiftPackageReference "LoggingUtil" */,
 				3AE25F9126E8078F00859A13 /* XCRemoteSwiftPackageReference "UserDefaultsUtil" */,
-				3AC4CA2F26EAB34A00A153CC /* XCRemoteSwiftPackageReference "swiftui-wrapping-stack" */,
-				3AC4CA3226EAB42100A153CC /* XCRemoteSwiftPackageReference "WrappingHStack" */,
 				3A8962B626FB53D70036BE08 /* XCRemoteSwiftPackageReference "PartialSheet" */,
 			);
 			productRefGroup = 3A4AE98324C22A3700A29477 /* Products */;
@@ -1048,22 +1040,6 @@
 				version = 2.1.14;
 			};
 		};
-		3AC4CA2F26EAB34A00A153CC /* XCRemoteSwiftPackageReference "swiftui-wrapping-stack" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/diniska/swiftui-wrapping-stack";
-			requirement = {
-				kind = exactVersion;
-				version = 1.0.1;
-			};
-		};
-		3AC4CA3226EAB42100A153CC /* XCRemoteSwiftPackageReference "WrappingHStack" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/dkk/WrappingHStack";
-			requirement = {
-				kind = exactVersion;
-				version = 2.1.2;
-			};
-		};
 		3AE25F8B26E803F000859A13 /* XCRemoteSwiftPackageReference "LoggingUtil" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AsioOtus/LoggingUtil.git";
@@ -1120,16 +1096,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3A8962B626FB53D70036BE08 /* XCRemoteSwiftPackageReference "PartialSheet" */;
 			productName = PartialSheet;
-		};
-		3AC4CA3026EAB34A00A153CC /* WrappingStack */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3AC4CA2F26EAB34A00A153CC /* XCRemoteSwiftPackageReference "swiftui-wrapping-stack" */;
-			productName = WrappingStack;
-		};
-		3AC4CA3326EAB42100A153CC /* WrappingHStack */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3AC4CA3226EAB42100A153CC /* XCRemoteSwiftPackageReference "WrappingHStack" */;
-			productName = WrappingHStack;
 		};
 		3AE25F8826E803D400859A13 /* Multitool */ = {
 			isa = XCSwiftPackageProductDependency;
