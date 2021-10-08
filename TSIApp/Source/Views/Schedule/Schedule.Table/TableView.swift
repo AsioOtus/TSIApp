@@ -24,29 +24,12 @@ extension Schedule.Table {
 		var body: some View {
 			NavigationView {
 				VStack(spacing: 0) {
-					Picker (selection: $vm.appState.intervalType, label: Text("")) {
-						ForEach(Schedule.IntervalType.allCases, id: \.self) { intervalType in
-							Text(Local[intervalType.localizationKey])
-								.foregroundColor(.white)
-						}
-					}
-					.pickerStyle(SegmentedPickerStyle())
-					.labelsHidden()
-					.padding()
-					.background(App.colorScheme.main.color.edgesIgnoringSafeArea([.leading, .trailing]))
+					intervalTypePicker
 					
 					if vm.appState.group == .empty && vm.appState.lecturer == .empty && vm.appState.room == .empty {
-						unchoosenFilterErrorMessageView
+						unselectedFilterMessage
 					} else {
-						Pager(page: vm.page, data: vm.periodViewModels, id: \.period) { periodVM in
-							Schedule.Table.PeriodView(vm: periodVM)
-						}
-						.draggingAnimation(.interactive)
-						.onPageChanged { i in
-							withAnimation {	vm.pageChanged(i) }
-						}
-						.padding(0)
-						.edgesIgnoringSafeArea(.all)
+						pagerView
 					}
 				}
 				.navigationBarTitleDisplayMode(.inline)
@@ -70,6 +53,19 @@ extension Schedule.Table {
 }
 
 extension Schedule.Table.TableView {
+	var intervalTypePicker: some View {
+		Picker (selection: $vm.appState.intervalType, label: Text("")) {
+			ForEach(Schedule.IntervalType.allCases, id: \.self) { intervalType in
+				Text(Local[intervalType.localizationKey])
+					.foregroundColor(.white)
+			}
+		}
+		.pickerStyle(SegmentedPickerStyle())
+		.labelsHidden()
+		.padding()
+		.background(App.colorScheme.main.color.edgesIgnoringSafeArea([.leading, .trailing]))
+	}
+	
 	var todayButton: some View {
 		Button(action: {
 			isPresentingDateView = true
@@ -114,7 +110,19 @@ extension Schedule.Table.TableView {
 		.foregroundColor(.white)
 	}
 	
-	var unchoosenFilterErrorMessageView: some View {
+	var pagerView: some View {
+		Pager(page: vm.page, data: vm.periodViewModels, id: \.period) { periodVM in
+			Schedule.Table.PeriodView(vm: periodVM)
+		}
+		.draggingAnimation(.interactive)
+		.onPageChanged { i in
+			withAnimation {	vm.pageChanged(i) }
+		}
+		.padding(0)
+		.ignoresSafeArea()
+	}
+	
+	var unselectedFilterMessage: some View {
 		VStack(alignment: .center) {
 			Text(Local[.noFilterSelected])
 				.padding()
