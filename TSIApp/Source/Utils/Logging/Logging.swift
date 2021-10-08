@@ -6,9 +6,13 @@ struct Logging {
 	static let centralHandler = SwitchHandler(label: "Handler.Central")
 		.details(.init(source: [App.Info.current.shortIdentifier]))
 		.handler(
-			key: "UserDefaults",
-			PlainConnector(SingleLineConverter(label: "Converter.SingleLine"))
-				.exporter(defaultExporter)
+			key: "UserDefaultsUtil",
+			PlainConnector(
+				SingleLineConverter(label: "Converter.SingleLine")
+					.detailsEnabling(.enabled(tags: false))
+					.metaInfoEnabling(.enabled(level: false))
+			)
+			.exporter(defaultExporter)
 		)
 		.defaultHandler(
 			PlainConnector(MultilineConverter(label: "Converter.Multiline"))

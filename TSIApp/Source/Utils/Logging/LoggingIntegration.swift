@@ -12,7 +12,7 @@ extension StandardLogger: UserDefaultsUtil.LogHandler where Message == String  {
 let userDefaultsUtilLogger =
 	StandardLogger(
 		Logging.centralHandler,
-		label: "Handler.UserDefaults"
+		label: "Logger.UserDefaults"
 	)
 	.details(.init(source: ["UserDefaultsUtil"], tags: ["UserDefaults"]))
 	.configuration(.init([.switchHandler: "UserDefaultsUtil"]))
@@ -36,5 +36,5 @@ extension StandardLogger: BaseNetworkUtil.ControllerLogHandler where Message == 
 }
 
 let baseNetworkUtilLogger =
-	StandardLogger(Logging.centralHandler)
+	StandardLogger(Logging.centralHandler, label: "Logger.Network")
 		.details(.init(source: ["BaseNetworkUtil"], tags: ["Network"]))
