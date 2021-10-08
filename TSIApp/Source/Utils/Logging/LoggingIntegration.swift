@@ -38,3 +38,4 @@ extension StandardLogger: BaseNetworkUtil.ControllerLogHandler where Message == 
 let baseNetworkUtilLogger =
 	StandardLogger(Logging.centralHandler, label: "Logger.Network")
 		.details(.init(source: ["BaseNetworkUtil"], tags: ["Network"]))
+		.configuration(.init([.switchHandler: "BaseNetworkUtil"]))

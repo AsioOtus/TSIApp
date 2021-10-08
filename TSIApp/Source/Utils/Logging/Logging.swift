@@ -8,15 +8,32 @@ struct Logging {
 		.handler(
 			key: "UserDefaultsUtil",
 			PlainConnector(
-				SingleLineConverter(label: "Converter.SingleLine")
-					.detailsEnabling(.enabled(tags: false))
-					.metaInfoEnabling(.enabled(level: false))
+				converter:
+					SingleLineConverter(label: "Converter.SingleLine")
+						.detailsEnabling(.enabled(tags: false))
+						.metaInfoEnabling(.enabled(level: false)),
+				exporter:
+					defaultExporter
 			)
-			.exporter(defaultExporter)
+		)
+		.handler(
+			key: "BaseNetworkUtil",
+			StandardHandler {
+				PlainConnector(MultilineConverter())
+					.exporter(defaultExporter)
+					.isEnabled(false)
+					.eraseToAnyHandler()
+			
+				PlainConnector(SingleLineConverter())
+					.exporter(defaultExporter)
+					.eraseToAnyHandler()
+			}
 		)
 		.defaultHandler(
-			PlainConnector(MultilineConverter(label: "Converter.Multiline"))
-				.exporter(defaultExporter)
+			PlainConnector(
+				converter: MultilineConverter(label: "Converter.Multiline"),
+				exporter: defaultExporter
+			)
 		)
 	
 	static let defaultLogger = StandardLogger(centralHandler, label: "Logger.Default")
