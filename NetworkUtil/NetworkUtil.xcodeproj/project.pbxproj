@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A0D04282718D6F900D9474A /* Multitool in Frameworks */ = {isa = PBXBuildFile; productRef = 3A0D04272718D6F900D9474A /* Multitool */; };
 		3A5988D525C48B4900373FFA /* NetworkUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A5988D325C48B4900373FFA /* NetworkUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A5988F525C48CB000373FFA /* Requests.GetLocalizedEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5988F325C48CB000373FFA /* Requests.GetLocalizedEvents.swift */; };
 		3A5988F625C48CB000373FFA /* Requests.GetItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5988F425C48CB000373FFA /* Requests.GetItems.swift */; };
@@ -52,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A0D04282718D6F900D9474A /* Multitool in Frameworks */,
 				3AE25F9026E8074700859A13 /* BaseNetworkUtil in Frameworks */,
 				3A59894525C4951C00373FFA /* SwiftyJSON in Frameworks */,
 			);
@@ -173,6 +175,7 @@
 			packageProductDependencies = (
 				3A59894425C4951C00373FFA /* SwiftyJSON */,
 				3AE25F8F26E8074700859A13 /* BaseNetworkUtil */,
+				3A0D04272718D6F900D9474A /* Multitool */,
 			);
 			productName = NetworkUtil;
 			productReference = 3A5988D025C48B4900373FFA /* NetworkUtil.framework */;
@@ -201,9 +204,9 @@
 			);
 			mainGroup = 3A5988C625C48B4900373FFA;
 			packageReferences = (
-				3A5988EB25C48C7200373FFA /* XCRemoteSwiftPackageReference "Multitool" */,
 				3A59894325C4951C00373FFA /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				3AE25F8E26E8074700859A13 /* XCRemoteSwiftPackageReference "BaseNetworkUtil" */,
+				3A0D04262718D6F900D9474A /* XCRemoteSwiftPackageReference "Multitool" */,
 			);
 			productRefGroup = 3A5988D125C48B4900373FFA /* Products */;
 			projectDirPath = "";
@@ -441,9 +444,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3A5988EB25C48C7200373FFA /* XCRemoteSwiftPackageReference "Multitool" */ = {
+		3A0D04262718D6F900D9474A /* XCRemoteSwiftPackageReference "Multitool" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AsioOtus/Multitool.git";
+			repositoryURL = "https://github.com/AsioOtus/Multitool";
 			requirement = {
 				branch = master;
 				kind = branch;
@@ -468,6 +471,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3A0D04272718D6F900D9474A /* Multitool */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A0D04262718D6F900D9474A /* XCRemoteSwiftPackageReference "Multitool" */;
+			productName = Multitool;
+		};
 		3A59894425C4951C00373FFA /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3A59894325C4951C00373FFA /* XCRemoteSwiftPackageReference "SwiftyJSON" */;

@@ -20,22 +20,29 @@ let userDefaultsUtilLogger =
 
 
 private let networkLogRecordStringConverter = StandardLogRecordStringConverter(
-	requestInfoConverter: StandardRequestInfoStringConverter().convert,
-	urlRequestConverter: DefaultURLRequestStringConverter().convert,
-	urlResponseConverter: DefaultURLResponseStringConverter().convert,
-	httpUrlResponseConverter: DefaultHTTPURLResponseStringConverter().convert,
-	controllerErrorConverter: StandardControllerErrorStringConverter(
-		urlRequestConverter: DefaultURLRequestStringConverter().convert,
+	requestInfo: StandardRequestInfoStringConverter().convert,
+	urlRequest: URLRequestStringConverters.Default().convert,
+	urlResponse: URLResponseStringConverters.Default().convert,
+	httpUrlResponse: HTTPURLResponseStringConverters.Default().convert,
+	controllerError: StandardControllerErrorStringConverter(
+		urlRequestConverter: URLRequestStringConverters.Default().convert,
 		urlErrorConverter: { $0.localizedDescription }
 	).convert
 )
 extension StandardLogger: BaseNetworkUtil.ControllerLogHandler where Message == String, Details == StandardRecordDetails {
 	public func log (_ logRecord: NetworkController.Logger.LogRecord<NetworkController.Logger.BaseDetails>) {
-		log(level: .info, message: logRecord.convert(networkLogRecordStringConverter) + "\n-----", details: .init(tags: [String(describing: logRecord.details.name)]))
+		log(
+			level: .info,
+			message: logRecord.convert(networkLogRecordStringConverter),
+			details:
+				.init(
+					source: [logRecord.details.type, logRecord.requestInfo.delegate] + logRecord.requestInfo.source
+				)
+		)
 	}
 }
 
 let baseNetworkUtilLogger =
 	StandardLogger(Logging.centralHandler, label: "Logger.Network")
-		.details(.init(source: ["BaseNetworkUtil"], tags: ["Network"]))
+		.details(.init(source: ["HTTP"], tags: ["Network"]))
 		.configuration(.init([.switchHandler: "BaseNetworkUtil"]))

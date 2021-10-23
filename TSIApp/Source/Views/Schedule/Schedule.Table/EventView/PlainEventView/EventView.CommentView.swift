@@ -13,7 +13,6 @@ extension Schedule.Table.EventView {
 				Text(preparedComment)
 					.font(.system(size: 13))
 					.italic()
-					.padding([.top, .bottom], 4)
 					.padding([.leading, .trailing], 6)
 					.background(App.colorScheme.eventCommentBackground.color)
 					.foregroundColor(.white)

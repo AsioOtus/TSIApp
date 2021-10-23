@@ -18,6 +18,12 @@ struct Debug {
 	static var cancellables = Set<AnyCancellable>()
 }
 
+extension Debug {
+	struct DebugError: Error {
+		
+	}
+}
+
 
 
 extension Debug {
@@ -46,13 +52,6 @@ extension Debug {
 
 extension Debug {
 	static func afterAppConfiguration () {
-		test3()
-	}
-	
-	private static func test3 () {
-		Logging.defaultLogger.info(Bundle.main.bundleIdentifier ?? "No Bundle identifier", details: .init(tags: ["QWW"]))
-		Logging.defaultLogger.info(Bundle.main.resourcePath ?? "No Bundle identifier", details: .init(tags: ["QWW"]))
-		Logging.defaultLogger.info(Bundle.main.bundlePath ?? "No Bundle identifier", details: .init(tags: ["QWW"]))
 		
 	}
 	

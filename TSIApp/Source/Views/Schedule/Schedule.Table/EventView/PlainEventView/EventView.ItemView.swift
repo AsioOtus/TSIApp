@@ -25,9 +25,5 @@ extension Schedule.Table.EventView {
 				EmptyView()
 			}
 		}
-		
-		var placeholderView: some View {
-			Rectangle().size(width: 100, height: 20)
-		}
 	}
 }

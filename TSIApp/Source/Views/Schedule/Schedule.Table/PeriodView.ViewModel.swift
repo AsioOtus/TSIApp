@@ -5,6 +5,7 @@ import SwiftDate
 import Combine
 import OrderedCollections
 import LoggingUtil
+import CombineExtensions
 
 extension Schedule.Table.PeriodView {
 	class ViewModel: ObservableObject {
@@ -22,7 +23,7 @@ extension Schedule.Table.PeriodView {
 			self.appState = appState
 			self.period = period
 			
-			self.days = .loading(())
+			self.days = .notInitialized
 			
 			refresh()
 			
@@ -51,7 +52,14 @@ extension Schedule.Table.PeriodView {
 			
 			self.days = .loading(())
 			
-			networkController.send(TSI.Requests.GetLocalizedEvents.Delegate(fromDate: period.startDate, toDate: period.endDate))
+			networkController
+				.send(TSI.Requests.GetLocalizedEvents.Delegate(fromDate: period.startDate, toDate: period.endDate), label: "GetLocalizedEvents")
+				.subscribe(on: DispatchQueue.global(qos: .background))
+				.deferredDelay(
+					after: 0.2,
+					for: 2,
+					scheduler: DispatchQueue.global(qos: .background)
+				)
 				.sink(
 					receiveCompletion: { completion in
 						if case .failure(let error) = completion {

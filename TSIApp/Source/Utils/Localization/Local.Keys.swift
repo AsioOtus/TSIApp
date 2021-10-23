@@ -15,6 +15,8 @@ extension Local.Keys {
 		case done = "Done"
 		case cancel = "Cancel"
 		case loading = "Loading"
+		case retry = "Retry"
+		case refresh = "Refresh"
 		
 		case russian = "Russian"
 		case english = "English"
@@ -89,7 +91,31 @@ extension Local.Keys {
 		case selectLanguage = "Preferences.PreferencesView.SelectLanguage"
 		case about = "Preferences.PreferencesView.About"
 		
+		
+		
 		static let tableName = "Localization"
+	}
+	
+	enum Errors {
+		enum Common: String, LocalizationKey {
+			case unexpectedError = "Errors.Unexpected"
+			case internalError = "Errors.Internal"
+			
+			
+			
+			static let tableName = "Errors"
+		}
+		
+		enum Network: String, LocalizationKey {
+			case loadingError = "Errors.Network.Loading"
+			case internalNetworkError = "Errors.Network.Internal"
+			case noConnectionHeader = "Errors.Network.NoConnection.Header"
+			case noConnectionText = "Errors.Network.NoConnection.Text"
+			
+			
+			
+			static let tableName = "Errors"
+		}
 	}
 }
 
@@ -136,5 +162,21 @@ extension Local {
 	
 	static subscript (preferences key: Keys.PreferencesView) -> String {
 		shared.localize(key.rawValue, Keys.PreferencesView.tableName)
+	}
+	
+	static subscript (_ key: Keys.Errors.Common) -> String {
+		shared.localize(key.rawValue, Keys.Errors.Common.tableName)
+	}
+	
+	static subscript (commonError key: Keys.Errors.Common) -> String {
+		shared.localize(key.rawValue, Keys.Errors.Common.tableName)
+	}
+	
+	static subscript (_ key: Keys.Errors.Network) -> String {
+		shared.localize(key.rawValue, Keys.Errors.Network.tableName)
+	}
+	
+	static subscript (netowrkError key: Keys.Errors.Network) -> String {
+		shared.localize(key.rawValue, Keys.Errors.Network.tableName)
 	}
 }

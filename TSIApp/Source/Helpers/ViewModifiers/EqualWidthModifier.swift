@@ -44,8 +44,6 @@ struct UpdateEqualWidthModifier: ViewModifier {
 	func body (content: Content) -> some View {
 		content
 			.onPreferenceChange(EqualWidthPreferenceKey.self) { value in
-				var a = "\(width) \(value)"
-				
 				switch (width, value) {
 				case (_, nil):
 					break
@@ -56,10 +54,6 @@ struct UpdateEqualWidthModifier: ViewModifier {
 				case let (.some(previousValue), .some(nextValue)):
 					width = max(previousValue, nextValue)
 				}
-				
-				a += " – \(width)"
-				
-				Logging.defaultLogger.info(a, details: .init(tags: ["KEK"]))
 			}
 	}
 }

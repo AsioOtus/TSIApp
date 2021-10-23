@@ -9,8 +9,7 @@ extension Schedule.Table.EventView {
 			VStack (alignment: .leading) {
 				if let name = eventInfo.name {
 					Text(name)
-						.font(.system(size: 16))
-//						.fontWeight(.reg)
+						.font(.callout)
 				}
 				
 				switch eventInfo.display {
@@ -19,8 +18,7 @@ extension Schedule.Table.EventView {
 						.padding(.top, 5)
 					
 				case .loading:
-					placeholderView("Lecturer loading", .blue)
-						.padding(.top, 5)
+					LoadingStateTokenView()
 					
 				case .loaded(let displayInfo):
 					if appState.lecturer == .empty {
@@ -38,13 +36,16 @@ extension Schedule.Table.EventView {
 					}
 					
 				case .failed(_):
-					placeholderView("Lecturer error", .red)
-						.padding(.top, 5)
+					Text(Local[.loadingError])
+						.foregroundColor(.red)
+						.font(.footnote)
+						.padding(.top, 1)
 				}
 				
 				CommentView(eventInfo: eventInfo)
-					.padding([.top, .bottom], 1)
+					.padding(.top, 3)
 			}
+			.padding(.bottom, 10)
 		}
 		
 		func isGroupsShown (_ groups: [Schedule.Event.Info.Display.ItemState]) -> Bool {

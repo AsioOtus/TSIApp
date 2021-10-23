@@ -1,0 +1,7 @@
+"Errors.Unexpected" = "Unexpected error";
+"Errors.Internal" = "Internal error";
+
+"Errors.Network.Internal" = "Internal network error";
+"Errors.Network.Loading" = "Loading error";
+"Errors.Network.NoConnection.Header" = "No connection";
+"Errors.Network.NoConnection.Text" = "Failed to load lecture schedule, please check your network settings.";

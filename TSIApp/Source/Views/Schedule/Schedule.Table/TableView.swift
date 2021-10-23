@@ -12,8 +12,6 @@ extension Schedule.Table {
 		@State var isPresentingSettingsView = false
 		@State var isPresentingDateView = false
 		
-		@ObservedObject var sheetManager: PartialSheetManager = PartialSheetManager()
-		
 		init (vm: ViewModel) {
 			self.vm = vm
 			
@@ -41,7 +39,6 @@ extension Schedule.Table {
 				}
 				.navigationBarColor(App.colorScheme.main)
 			}
-			.environmentObject(sheetManager)
 			.sheet(isPresented: $isPresentingDateView) {
 				Schedule.Table.SelectDateView(vm: .init(appState: appState), isShown: $isPresentingDateView)
 			}
@@ -70,7 +67,7 @@ extension Schedule.Table.TableView {
 		Button(action: {
 			isPresentingDateView = true
 		}) {
-			Image.calendar.font(.system(size: 24))
+			Image.calendar.font(.system(size: 20))
 		}
 		.foregroundColor(.white)
 	}
@@ -79,7 +76,7 @@ extension Schedule.Table.TableView {
 		Button(action: {
 			self.isPresentingSettingsView = true
 		}) {
-			Image.sliders.font(.system(size: 24))
+			Image.sliders.font(.system(size: 20))
 		}
 		.foregroundColor(.white)
 	}

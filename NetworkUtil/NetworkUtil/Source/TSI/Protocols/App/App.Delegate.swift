@@ -8,7 +8,7 @@ extension App {
 		private(set) static var current: Delegate!
 		
 		func application (_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-			LaunchCounter.default.launch(cycle: Info.current.version)
+			LaunchCounter.default.launch(cycle: Date().toFormat("hh:mm:ss"))
 
 			Logging.defaultLogger.notice("APPLICATION STARTED | Launch number: \(LaunchCounter.default.count) – \(LaunchCounter.default.label)")
 			

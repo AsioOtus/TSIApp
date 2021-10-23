@@ -75,10 +75,10 @@ extension Preferences.PreferencesView {
 						VStack(alignment: .leading) {
 							Text(Local[FrontendLanguage.system.localizationKey])
 							if
-								let currentLanguageCode = selectedLanguage.code,
+								let currentLanguageCode = FrontendLanguage.system.code,
 								let languageNameLocalization = Locale(identifier: currentLanguageCode).localizedString(forLanguageCode: currentLanguageCode)
 							{
-								Text(languageNameLocalization.capitalized + (selectedLanguage.appLanguageOrSystem.map{ " " + $0.flagEmoji } ?? ""))
+								Text(languageNameLocalization.capitalized + (FrontendLanguage.system.appLanguageOrSystem.map{ " " + $0.flagEmoji } ?? ""))
 									.font(.footnote)
 							}
 						}

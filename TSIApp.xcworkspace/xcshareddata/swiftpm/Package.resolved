@@ -2,11 +2,20 @@
   "object": {
     "pins": [
       {
+        "package": "AFExtensions",
+        "repositoryURL": "https://github.com/AsioOtus/AFExtensions",
+        "state": {
+          "branch": "master",
+          "revision": "a98ca3b99e731ed0410db3fa26d3a6fcb3982b7f",
+          "version": null
+        }
+      },
+      {
         "package": "BaseNetworkUtil",
         "repositoryURL": "https://github.com/AsioOtus/BaseNetworkUtil.git",
         "state": {
           "branch": "master",
-          "revision": "20913b2a36c24537c2cb3aa9ba13b4bc714bdc73",
+          "revision": "5f248d0a1f5447d5270cb080825d516ebafcec92",
           "version": null
         }
       },
@@ -15,16 +24,16 @@
         "repositoryURL": "https://github.com/AsioOtus/LoggingUtil.git",
         "state": {
           "branch": "master",
-          "revision": "d44da46cb02be57dc94174cd3a0684e47fe52082",
+          "revision": "4ef6694e8764dac1e3cca8c9a2ea8fb59593ae61",
           "version": null
         }
       },
       {
         "package": "Multitool",
-        "repositoryURL": "https://github.com/AsioOtus/Multitool.git",
+        "repositoryURL": "https://github.com/AsioOtus/Multitool",
         "state": {
           "branch": "master",
-          "revision": "87551ae095b83efd1e6102e8a87beedc36f36d0d",
+          "revision": "d83c9011cf0f026336c5fbeb5b5c47709e27c794",
           "version": null
         }
       },
@@ -105,7 +114,7 @@
         "repositoryURL": "https://github.com/AsioOtus/UserDefaultsUtil.git",
         "state": {
           "branch": "master",
-          "revision": "8f892b3f3ce0dbca9e0a676faf546d883e3ee224",
+          "revision": "0070f386223357d70e43000b224f1f8da32861d5",
           "version": null
         }
       }

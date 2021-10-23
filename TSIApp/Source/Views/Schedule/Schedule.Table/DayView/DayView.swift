@@ -11,7 +11,7 @@ extension Schedule.Table {
 				PlainDayView(info: info)
 
 			case let .empty(startDate, endDate):
-				EmptyDayView2(startDate: startDate, endDate: endDate)
+				MessageView(startDate, endDate) { EmptyView() }
 			}
 		}
 	}

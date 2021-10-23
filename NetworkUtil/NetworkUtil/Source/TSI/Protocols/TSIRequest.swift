@@ -1,5 +1,6 @@
 import Helpers
 import BaseNetworkUtil
+import Multitool
 
 public protocol TSIRequest: Request { }
 
@@ -29,18 +30,23 @@ public extension TSIResponseModel {
 		guard let responseDataString = String(data: responseData, encoding: .utf8)
 		else { throw TSINetworkError.responseDataAsStringInterpretationFailed(responseData) }
 		
-		var fixedResponseDataString = responseDataString.replacingOccurrences(of: "\\", with: "")
+		let result = AnyProcessor<String, TSINetworkError>
+			.and([
+				.process { $0.replacingOccurrences(of: "\\", with: "") },
+				
+				.longerThan(2, failure: { TSINetworkError.responseFixingFailed(error: "", dataString: $0) }),
+				.process { $0.replacingOccurrences(of: ")(", with: "") },
+				
+				.longerThan(3, failure: { TSINetworkError.responseFixingFailed(error: "", dataString: $0) }),
+				.process { String($0.dropLast(3)) },
+				
+				.longerThan(7, failure: { TSINetworkError.responseFixingFailed(error: "", dataString: $0) }),
+				.process { String($0.dropFirst(7)) }
+			])
+			.process(responseDataString)
 		
-		guard fixedResponseDataString.count >= 2 else { throw TSINetworkError.responseFixingFailed(error: "", dataString: responseDataString) }
-		fixedResponseDataString = fixedResponseDataString.replacingOccurrences(of: ")(", with: "")
-		
-		guard fixedResponseDataString.count >= 3 else { throw TSINetworkError.responseFixingFailed(error: "", dataString: responseDataString) }
-		fixedResponseDataString.removeLast(3)
-		
-		guard fixedResponseDataString.count >= 7 else { throw TSINetworkError.responseFixingFailed(error: "", dataString: responseDataString) }
-		fixedResponseDataString.removeFirst(7)
-		
-		let fixedResponseData = fixedResponseDataString.data(using: .utf8)!
+		let fixedResponseString = try result.value()
+		let fixedResponseData = fixedResponseString.data(using: .utf8)!
 		return fixedResponseData
 	}
 	

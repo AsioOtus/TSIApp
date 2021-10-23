@@ -14,10 +14,10 @@ extension Schedule.Table.EventView {
 		var body: some View {
 			switch items {
 			case .notInitialized:
-				placeholderView.background(Color.green)
+				LoadingStateTokenView()
 				
 			case .loading:
-				placeholderView.background(Color.blue)
+				LoadingStateTokenView()
 				
 			case .loaded(let items):
 				let enumeratedItems = items.enumerated().map{ index, item in (loopIndex: index, item: item) }
@@ -26,7 +26,12 @@ extension Schedule.Table.EventView {
 				}
 				
 			case .failed(_):
-				placeholderView.background(Color.red)
+				Text(Local[.loadingError])
+					.fixedSize(horizontal: false, vertical: true)
+					.multilineTextAlignment(.center)
+					.foregroundColor(.red)
+					.font(.footnote)
+					.padding(.top, 1)
 			}
 		}
 		

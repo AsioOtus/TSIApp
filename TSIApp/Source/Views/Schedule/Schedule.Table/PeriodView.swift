@@ -10,11 +10,26 @@ extension Schedule.Table {
 		var body: some View {
 			switch vm.days {
 			case .notInitialized:
-				Text("Refresh")
+				List {
+					MessageView(vm.period.startDate, vm.period.endDate, showDuration: false) {
+						Button(Local[.refresh]) {
+							vm.refresh()
+						}
+					}
+				}
+				.environment(\.defaultMinListRowHeight, 10)
+				.listStyle(InsetGroupedListStyle())
 				
 			case .loading:
 				List {
-					EmptyDayView2(startDate: vm.period.startDate, endDate: vm.period.endDate)
+					MessageView(vm.period.startDate, vm.period.endDate, showDuration: false) {
+						Spacer()
+						
+						Text(Local[.loading])
+						ProgressView()
+							.padding(.top, 8)
+							.scaleEffect(1.25, anchor: .center)
+					}
 				}
 				.environment(\.defaultMinListRowHeight, 10)
 				.listStyle(InsetGroupedListStyle())
@@ -23,28 +38,14 @@ extension Schedule.Table {
 				List {
 					ForEach(days, id: \.date) { day in
 						Schedule.Table.DayView(day: day)
-							.environment(\.leadingColumnWidth, leadingColumnWidth)
 					}
 				}
 				.environment(\.defaultMinListRowHeight, 10)
 				.listStyle(InsetGroupedListStyle())
 				
 			case .failed(let error):
-				Text(String(describing: error))
+				ErrorView(error: error)
 			}
 		}
-	}
-}
-
-extension Schedule.Table.PeriodView {
-	struct LeadingColumnWidthEnvironmentKey: EnvironmentKey {
-		static let defaultValue: CGFloat? = nil
-	}
-}
-
-extension EnvironmentValues {
-	var leadingColumnWidth: CGFloat? {
-		get { self[Schedule.Table.PeriodView.LeadingColumnWidthEnvironmentKey.self] }
-		set { self[Schedule.Table.PeriodView.LeadingColumnWidthEnvironmentKey.self] = newValue }
 	}
 }

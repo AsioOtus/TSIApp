@@ -5,6 +5,8 @@ import Multitool
 
 extension TSI.Requests.GetLocalizedEvents {
 	struct Delegate: TSIRequestDelegate {
+		var name: String { "GetLocalizedEvents" }
+		
 		let fromDate: DateInRegion
 		let toDate: DateInRegion
 		
@@ -13,7 +15,7 @@ extension TSI.Requests.GetLocalizedEvents {
 			self.toDate = toDate
 		}
 		
-		func request (_ requestInfo: NetworkController.RequestInfo) throws -> GetLocalizedEvents {
+		func request (_ requestInfo: RequestInfo) throws -> GetLocalizedEvents {
 			let model = GetLocalizedEvents.Model.init(
 				from: Int(fromDate.timeIntervalSince1970),
 				to: Int(toDate.timeIntervalSince1970),
@@ -28,7 +30,7 @@ extension TSI.Requests.GetLocalizedEvents {
 			return request
 		}
 		
-		func content (_ response: GetLocalizedEvents.Response, _ requestInfo: NetworkController.RequestInfo) -> [Schedule.Event.Info] {			
+		func content (_ response: GetLocalizedEvents.Response, _ requestInfo: RequestInfo) -> [Schedule.Event.Info] {
 			let events = response.model.events.map {
 				Schedule.Event.Info(
 					date: DateInRegion(seconds: TimeInterval($0.time)),
@@ -47,6 +49,8 @@ extension TSI.Requests.GetLocalizedEvents {
 	}
 	
 	struct CustomDelegate: TSIRequestDelegate {
+		var name: String { "GetLocalizedEvents.CustomDelegate" }
+		
 		let fromDate: DateInRegion
 		let toDate: DateInRegion
 		
@@ -55,7 +59,7 @@ extension TSI.Requests.GetLocalizedEvents {
 			self.toDate = toDate
 		}
 		
-		func request (_ requestInfo: NetworkController.RequestInfo) throws -> GetLocalizedEvents {
+		func request (_ requestInfo: RequestInfo) throws -> GetLocalizedEvents {
 			let model = GetLocalizedEvents.Model.init(
 				from: Int(fromDate.timeIntervalSince1970),
 				to: Int(toDate.timeIntervalSince1970),
@@ -70,7 +74,7 @@ extension TSI.Requests.GetLocalizedEvents {
 			return request
 		}
 		
-		func content (_ response: GetLocalizedEvents.Response, _ requestInfo: NetworkController.RequestInfo) -> [Schedule.Event.Info] {
+		func content (_ response: GetLocalizedEvents.Response, _ requestInfo: RequestInfo) -> [Schedule.Event.Info] {
 			let events = response.model.events.map {
 				Schedule.Event.Info(
 					date: DateInRegion(seconds: TimeInterval($0.time)),
