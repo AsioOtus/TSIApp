@@ -35,7 +35,6 @@ extension App.Controller {
 extension App.Controller {
 	func loadScheduleFilterValuesSets () {
 		let cancellable = self.serialController.send(TSI.Requests.GetItems.Delegate())
-			.delay(for: 10, scheduler: DispatchQueue.global(qos: .background))
 			.receive(on: DispatchQueue.main)
 			.sink(
 				receiveCompletion: { completion in

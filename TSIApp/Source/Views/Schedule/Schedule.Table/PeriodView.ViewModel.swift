@@ -28,17 +28,18 @@ extension Schedule.Table.PeriodView {
 			refresh()
 			
 			appState.scheduleFilterValuesUpdated
-				.dropFirst()
 				.sink {
 					self.refresh()
 				}
 				.store(in: &cancellables)
+			
 			appState.$scheduleFilterValuesSets
 				.dropFirst()
 				.sink { scheduleFilterValuesSets in
 					self.refreshEventsDisplayInfo(scheduleFilterValuesSets)
 				}
 				.store(in: &cancellables)
+			
 			appState.$language
 				.dropFirst()
 				.sink { _ in

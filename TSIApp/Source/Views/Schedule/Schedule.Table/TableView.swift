@@ -2,7 +2,6 @@ import SwiftUI
 import SwiftDate
 import LoggingUtil
 import SwiftUIPager
-import PartialSheet
 
 extension Schedule.Table {
 	struct TableView: View {

@@ -1,8 +1,6 @@
 import SwiftyJSON
 import BaseNetworkUtil
 
-
-
 extension TSI.Requests.GetLocalizedEvents.Response.Model.Parser {
 	struct Error: Swift.Error {
 		let category: Category
@@ -62,8 +60,6 @@ extension TSI.Requests.GetLocalizedEvents.Response.Model.Parser {
 	}
 }
 
-
-
 extension TSI.Requests.GetLocalizedEvents.Response.Model {
 	struct Parser {
 		static func parse (_ jsonData: Data) throws -> [Event] {
@@ -85,8 +81,6 @@ extension TSI.Requests.GetLocalizedEvents.Response.Model {
 		}
 	}
 }
-
-
 
 private extension TSI.Requests.GetLocalizedEvents.Response.Model.Parser {
 	static func getKeysIndices (_ keys: [String], _ json: JSON) throws -> KeysIndices {
