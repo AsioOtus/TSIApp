@@ -28,6 +28,7 @@
 		3A1953E824F9333B002B0203 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1953E724F9333B002B0203 /* Calendar.swift */; };
 		3A1F45162726B28D00E54C4F /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F45152726B28D00E54C4F /* AboutView.swift */; };
 		3A1F45182726B51000E54C4F /* LanguageSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F45172726B51000E54C4F /* LanguageSelectView.swift */; };
+		3A1F451F272710C400E54C4F /* App.Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F451E272710C400E54C4F /* App.Colors.swift */; };
 		3A202EEF250931B3002EA509 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A202EEE250931B3002EA509 /* DayView.swift */; };
 		3A202EF125093369002EA509 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A202EF025093369002EA509 /* EventView.swift */; };
 		3A24CC9826C576760086E778 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 3A24CC9726C576760086E778 /* DequeModule */; };
@@ -106,7 +107,7 @@
 		3AF3C95C2524FF2E00ADE351 /* EventView.CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF3C95B2524FF2E00ADE351 /* EventView.CommentView.swift */; };
 		3AF5F23024D89E4F000D45D8 /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF5F22F24D89E4F000D45D8 /* Debug.swift */; };
 		3AFBE5002507B68A000C089B /* AppColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFBE4FF2507B68A000C089B /* AppColorScheme.swift */; };
-		3AFBE5022507BD46000C089B /* App.StandardColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFBE5012507BD46000C089B /* App.StandardColorScheme.swift */; };
+		3AFBE5022507BD46000C089B /* App.Colors.StandardScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFBE5012507BD46000C089B /* App.Colors.StandardScheme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -144,6 +145,7 @@
 		3A1F45152726B28D00E54C4F /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		3A1F45172726B51000E54C4F /* LanguageSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectView.swift; sourceTree = "<group>"; };
 		3A1F451A2726BC7200E54C4F /* Main.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Main.xcconfig; sourceTree = "<group>"; };
+		3A1F451E272710C400E54C4F /* App.Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.Colors.swift; sourceTree = "<group>"; };
 		3A202EEB2509290C002EA509 /* UserDefaultsWrapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UserDefaultsWrapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A202EEE250931B3002EA509 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 		3A202EF025093369002EA509 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
@@ -224,7 +226,7 @@
 		3AF3C95B2524FF2E00ADE351 /* EventView.CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.CommentView.swift; sourceTree = "<group>"; };
 		3AF5F22F24D89E4F000D45D8 /* Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
 		3AFBE4FF2507B68A000C089B /* AppColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColorScheme.swift; sourceTree = "<group>"; };
-		3AFBE5012507BD46000C089B /* App.StandardColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.StandardColorScheme.swift; sourceTree = "<group>"; };
+		3AFBE5012507BD46000C089B /* App.Colors.StandardScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.Colors.StandardScheme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,12 +262,14 @@
 			path = ErrorViews;
 			sourceTree = "<group>";
 		};
-		3A0F929D26D4B203005CE215 /* Themes */ = {
+		3A0F929D26D4B203005CE215 /* ColorSchemes */ = {
 			isa = PBXGroup;
 			children = (
+				3AFBE5012507BD46000C089B /* App.Colors.StandardScheme.swift */,
 				3AFBE4FF2507B68A000C089B /* AppColorScheme.swift */,
+				3A1F451E272710C400E54C4F /* App.Colors.swift */,
 			);
-			path = Themes;
+			path = ColorSchemes;
 			sourceTree = "<group>";
 		};
 		3A0F92A026D4B2B8005CE215 /* PlainEventView */ = {
@@ -385,7 +389,6 @@
 				3A4AE9A224C22BA100A29477 /* App.Controller.swift */,
 				3A4AE9A024C22B4300A29477 /* App.Delegate.swift */,
 				3A4AE99E24C22AE200A29477 /* App.Info.swift */,
-				3AFBE5012507BD46000C089B /* App.StandardColorScheme.swift */,
 				3AE77BD624E32D0400898C8C /* App.State.swift */,
 				3A4AE99C24C22AD000A29477 /* App.swift */,
 			);
@@ -643,7 +646,7 @@
 				3A4AE9A624C2301A00A29477 /* Localization */,
 				3AE30EE425C49A02009B22FB /* Logging */,
 				3A4AEA1C24C35FAA00A29477 /* Networks */,
-				3A0F929D26D4B203005CE215 /* Themes */,
+				3A0F929D26D4B203005CE215 /* ColorSchemes */,
 				3ADB7DAC24C8CC390032E560 /* UserDefaults */,
 				3A8962BB26FBB0330036BE08 /* LaunchCounter.swift */,
 			);
@@ -788,6 +791,7 @@
 				3A4AE98A24C22A3700A29477 /* MainView.swift in Sources */,
 				3A56FAC92725AD8500FA3371 /* ArraySlice.swift in Sources */,
 				3AE30EE825C49B1F009B22FB /* Logging.swift in Sources */,
+				3A1F451F272710C400E54C4F /* App.Colors.swift in Sources */,
 				3A0F926B26D18273005CE215 /* Schedule.EmptyLectionDisplay.swift in Sources */,
 				3A041FA82710FADB000F3D8D /* ErrorView.swift in Sources */,
 				3A4AEA5A24C3AC7000A29477 /* Image.swift in Sources */,
@@ -817,7 +821,7 @@
 				3A4AEA1F24C35FEF00A29477 /* Requests.TSI.GetItems.Delegate.swift in Sources */,
 				3ADB7DAE24C8CC480032E560 /* UserDefaults.swift in Sources */,
 				3A143C8E26CC67EB004AF872 /* Collection.swift in Sources */,
-				3AFBE5022507BD46000C089B /* App.StandardColorScheme.swift in Sources */,
+				3AFBE5022507BD46000C089B /* App.Colors.StandardScheme.swift in Sources */,
 				3A0FB83424F59350007531DA /* Schedule.Period.swift in Sources */,
 				3AF3C9562524FB9A00ADE351 /* EventView.ItemsView.swift in Sources */,
 				3AF003C926DD7D1F00D515B1 /* Schedule.Day.swift in Sources */,

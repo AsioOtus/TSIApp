@@ -38,7 +38,7 @@ extension App {
 			}
 		}
 		
-		var colorScheme: AppColorScheme = StandardColorScheme()
+		var colorScheme: AppColorScheme = App.Colors.StandardScheme()
 	}
 }
 

@@ -56,13 +56,17 @@ extension Schedule {
 				}
 				.navigationBarTitle(Text(Local[settings: .title]), displayMode: .inline)
 				.navigationBarItems(
-					leading: Button(action: {
-						self.isShown = false
-					}) { Text(Local[.cancel]) },
-					trailing: Button(action: {
-						self.vm.done()
-						self.isShown = false
-					}) { Text(Local[.done])	}
+					leading:
+						Button(Local[.cancel]) {
+							self.isShown = false
+						}
+						.foregroundColor(.white),
+					trailing:
+						Button(Local[.done]) {
+							self.vm.done()
+							self.isShown = false
+						}
+						.foregroundColor(.white)
 				)
 				.navigationBarColor(App.colorScheme.main)
 				.pullToRefresh(isShowing: self.$vm.isLoadingIndicatorVisible) {

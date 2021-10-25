@@ -9,7 +9,6 @@ extension Schedule.Table {
 			switch event {
 			case .empty:
 				EmptyEventView(event: event)
-					.listRowBackground(Color(white: 0.98))
 				
 			case .plain(let eventInfo):
 				PlainEventView(eventInfo: eventInfo)

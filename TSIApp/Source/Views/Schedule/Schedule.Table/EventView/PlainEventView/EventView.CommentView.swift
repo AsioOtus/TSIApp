@@ -14,7 +14,7 @@ extension Schedule.Table.EventView {
 					.font(.system(size: 13))
 					.italic()
 					.padding([.leading, .trailing], 6)
-					.background(App.colorScheme.eventCommentBackground.color)
+					.background(UIColor.tertiarySystemFill.color)
 					.foregroundColor(.white)
 					.cornerRadius(5)
 			}

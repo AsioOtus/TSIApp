@@ -31,6 +31,7 @@ extension Schedule.Table.EventView {
 					.font(.system(size: 15, weight: .light))
 					.padding(.bottom, 2)
 			}
+			.listRowBackground(appState.colorScheme.emptyEventBackground.color)
 			.foregroundColor(Color(white: 0.75))
 		}
 	}

@@ -16,20 +16,15 @@ extension Schedule.Table {
 				VStack (spacing: 0) {
 					HStack {
 						Button(Local[.today]) { vm.todayButtonPressed() }
-						
 						Spacer()
-						
 						Button(Local[.tomorrow]) { vm.tomorrowButtonPressed() }
-						
 						Spacer()
-						
 						Button(Local[.theDayAfterTomorrow]) { vm.theDayAfterTomorrowButtonPressed() }
 					}
+					.foregroundColor(vm.appState.colorScheme.secondaryButtonForeground.color)
 					.padding(.top, 12)
 					.padding(.bottom, 12)
 					.padding([.leading, .trailing], 16)
-					
-					Divider()
 					
 					DatePicker(
 						Local[.datePickerLabel],
@@ -38,20 +33,23 @@ extension Schedule.Table {
 						displayedComponents: .date
 					)
 					.datePickerStyle(GraphicalDatePickerStyle())
-					.padding(.top, 12)
 					.padding([.leading, .trailing], 16)
 					
 					Spacer()
 				}
 				.navigationBarTitle(Local[selectDate: .title], displayMode: .inline)
 				.navigationBarItems(
-					leading: Button(Local[.cancel]) {
-						isShown = false
-					},
-					trailing: Button(Local[.done]) {
-						vm.done()
-						isShown = false
-					}
+					leading:
+						Button(Local[.cancel]) {
+							isShown = false
+						}
+						.foregroundColor(.white),
+					trailing:
+						Button(Local[.done]) {
+							vm.done()
+							isShown = false
+						}
+						.foregroundColor(.white)
 				)
 				.navigationBarColor(App.colorScheme.main)
 			}

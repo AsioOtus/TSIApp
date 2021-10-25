@@ -4,7 +4,7 @@ struct GroupsTextModifier: ViewModifier {
 	func body (content: Content) -> some View {
 		content
 			.font(.system(size: 14, weight: .light))
-			.foregroundColor(App.colorScheme.secondaryText.color)
+			.foregroundColor(UIColor.label.color)
 	}
 }
 
