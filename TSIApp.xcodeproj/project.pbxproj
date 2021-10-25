@@ -26,6 +26,8 @@
 		3A143C8E26CC67EB004AF872 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A143C8D26CC67EB004AF872 /* Collection.swift */; };
 		3A16FEC024F434FA00CBA263 /* TableView.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A16FEBF24F434FA00CBA263 /* TableView.ViewModel.swift */; };
 		3A1953E824F9333B002B0203 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1953E724F9333B002B0203 /* Calendar.swift */; };
+		3A1F45162726B28D00E54C4F /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F45152726B28D00E54C4F /* AboutView.swift */; };
+		3A1F45182726B51000E54C4F /* LanguageSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F45172726B51000E54C4F /* LanguageSelectView.swift */; };
 		3A202EEF250931B3002EA509 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A202EEE250931B3002EA509 /* DayView.swift */; };
 		3A202EF125093369002EA509 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A202EF025093369002EA509 /* EventView.swift */; };
 		3A24CC9826C576760086E778 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 3A24CC9726C576760086E778 /* DequeModule */; };
@@ -88,7 +90,7 @@
 		3AE77BD224E3256900898C8C /* FrontendLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE77BD124E3256900898C8C /* FrontendLanguage.swift */; };
 		3AE77BD724E32D0400898C8C /* App.State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE77BD624E32D0400898C8C /* App.State.swift */; };
 		3AE77BD924E3304200898C8C /* Schedule.IntervalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE77BD824E3304200898C8C /* Schedule.IntervalType.swift */; };
-		3AE77BDC24E3343900898C8C /* Preferences.PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE77BDB24E3343900898C8C /* Preferences.PreferencesView.swift */; };
+		3AE77BDC24E3343900898C8C /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE77BDB24E3343900898C8C /* PreferencesView.swift */; };
 		3AE77BDF24E44F3700898C8C /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE77BDE24E44F3700898C8C /* Schedule.swift */; };
 		3AE77BE124E44F8600898C8C /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE77BE024E44F8600898C8C /* Main.swift */; };
 		3AE77BE324E4523900898C8C /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE77BE224E4523900898C8C /* Preferences.swift */; };
@@ -139,6 +141,9 @@
 		3A143C8D26CC67EB004AF872 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		3A16FEBF24F434FA00CBA263 /* TableView.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.ViewModel.swift; sourceTree = "<group>"; };
 		3A1953E724F9333B002B0203 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
+		3A1F45152726B28D00E54C4F /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		3A1F45172726B51000E54C4F /* LanguageSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectView.swift; sourceTree = "<group>"; };
+		3A1F451A2726BC7200E54C4F /* Main.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Main.xcconfig; sourceTree = "<group>"; };
 		3A202EEB2509290C002EA509 /* UserDefaultsWrapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UserDefaultsWrapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A202EEE250931B3002EA509 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 		3A202EF025093369002EA509 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
@@ -204,7 +209,7 @@
 		3AE77BD124E3256900898C8C /* FrontendLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontendLanguage.swift; sourceTree = "<group>"; };
 		3AE77BD624E32D0400898C8C /* App.State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.State.swift; sourceTree = "<group>"; };
 		3AE77BD824E3304200898C8C /* Schedule.IntervalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.IntervalType.swift; sourceTree = "<group>"; };
-		3AE77BDB24E3343900898C8C /* Preferences.PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.PreferencesView.swift; sourceTree = "<group>"; };
+		3AE77BDB24E3343900898C8C /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 		3AE77BDE24E44F3700898C8C /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		3AE77BE024E44F8600898C8C /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		3AE77BE224E4523900898C8C /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
@@ -293,6 +298,14 @@
 			path = Events;
 			sourceTree = "<group>";
 		};
+		3A1F45192726BC0A00E54C4F /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				3A1F451A2726BC7200E54C4F /* Main.xcconfig */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 		3A384A392613A36A003BE1D7 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,6 +354,7 @@
 		3A4AE99924C22A4100A29477 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3A1F45192726BC0A00E54C4F /* Configuration */,
 				3A4AE9A924C2304700A29477 /* Localization */,
 				3A4AE98B24C22A3800A29477 /* Assets.xcassets */,
 				3A4AE99324C22A3800A29477 /* Info.plist */,
@@ -592,7 +606,9 @@
 		3AE77BDA24E3340700898C8C /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
-				3AE77BDB24E3343900898C8C /* Preferences.PreferencesView.swift */,
+				3AE77BDB24E3343900898C8C /* PreferencesView.swift */,
+				3A1F45152726B28D00E54C4F /* AboutView.swift */,
+				3A1F45172726B51000E54C4F /* LanguageSelectView.swift */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -755,7 +771,7 @@
 				3AE77BD924E3304200898C8C /* Schedule.IntervalType.swift in Sources */,
 				3A8962BC26FBB0330036BE08 /* LaunchCounter.swift in Sources */,
 				3A202EEF250931B3002EA509 /* DayView.swift in Sources */,
-				3AE77BDC24E3343900898C8C /* Preferences.PreferencesView.swift in Sources */,
+				3AE77BDC24E3343900898C8C /* PreferencesView.swift in Sources */,
 				3AF3C9542524FB6400ADE351 /* EventView.ItemView.swift in Sources */,
 				3A4AE98824C22A3700A29477 /* SceneDelegate.swift in Sources */,
 				3ADB7D4E24C771590032E560 /* KeyValuePair.swift in Sources */,
@@ -776,6 +792,7 @@
 				3A041FA82710FADB000F3D8D /* ErrorView.swift in Sources */,
 				3A4AEA5A24C3AC7000A29477 /* Image.swift in Sources */,
 				3A8962C326FCEA340036BE08 /* StartView.swift in Sources */,
+				3A1F45182726B51000E54C4F /* LanguageSelectView.swift in Sources */,
 				3AB3604224E5DD24004D5811 /* BackendLanguage.swift in Sources */,
 				3A16FEC024F434FA00CBA263 /* TableView.ViewModel.swift in Sources */,
 				3AAC8AD924F7C5A700CF7CEE /* Event.swift in Sources */,
@@ -783,6 +800,7 @@
 				3ADB7D5D24C88FB20032E560 /* LoadingState.swift in Sources */,
 				3A0F927926D3A8ED005CE215 /* Array.swift in Sources */,
 				3A4AE99F24C22AE200A29477 /* App.Info.swift in Sources */,
+				3A1F45162726B28D00E54C4F /* AboutView.swift in Sources */,
 				3A041FA427106FE7000F3D8D /* NavigationBarBackgroundColor.swift in Sources */,
 				3A4AE9A124C22B4300A29477 /* App.Delegate.swift in Sources */,
 				3A0FB83624F59DC4007531DA /* Event.Class.swift in Sources */,
@@ -854,6 +872,7 @@
 /* Begin XCBuildConfiguration section */
 		3A4AE99424C22A3800A29477 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A1F451A2726BC7200E54C4F /* Main.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -916,6 +935,7 @@
 		};
 		3A4AE99524C22A3800A29477 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A1F451A2726BC7200E54C4F /* Main.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -972,6 +992,7 @@
 		};
 		3A4AE99724C22A3800A29477 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A1F451A2726BC7200E54C4F /* Main.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "tsiapp-accent";
@@ -994,6 +1015,7 @@
 		};
 		3A4AE99824C22A3800A29477 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A1F451A2726BC7200E54C4F /* Main.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "tsiapp-accent";

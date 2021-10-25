@@ -43,3 +43,21 @@
 "Preferences.PreferencesView.Language" = "Язык";
 "Preferences.PreferencesView.SelectLanguage" = "Язык приложения";
 "Preferences.PreferencesView.About" = "О приложении";
+
+"Preferences.AboutView.Title.Description" = "Описание";
+"Preferences.AboutView.Title.Team" = "Команда";
+"Preferences.AboutView.Title.Support" = "Поддержка";
+
+"Preferences.AboutView.Introduction" = "Добро пожаловать в приложение расписания занятий Института транспорта и связи!";
+"Preferences.AboutView.Description" = "Приложение для просмотра расписания занятий Института транспорта и связи.";
+"Preferences.AboutView.Features" = "";
+"Preferences.AboutView.NotOfficial" = "Приложение не является официальным приложением Института транспорта и связи.";
+//"Preferences.AboutView.LinkToOfficial.Text" = "Вы можете скачать официальное приложение Института по";
+//"Preferences.AboutView.LinkToOfficial.Link" = "этой ссылке";
+"Preferences.AboutView.LinkToOfficial.ButtonText" = "Официальное приложение";
+
+"Preferences.AboutView.Developer" = "Разработчик";
+"Preferences.AboutView.DeveloperName" = "Антон Плетнёв";
+
+"Preferences.AboutView.ReportABugDescription" = "Если вы столкнулись с ошибкой при работе с приложением, пожалуйста, отправьте email на адрес ";
+"Preferences.AboutView.ReportABug" = "Сообщить об ошибке";

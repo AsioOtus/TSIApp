@@ -43,3 +43,21 @@
 "Preferences.PreferencesView.Language" = "Language";
 "Preferences.PreferencesView.SelectLanguage" = "App language";
 "Preferences.PreferencesView.About" = "About";
+
+"Preferences.AboutView.Title.Description" = "Description";
+"Preferences.AboutView.Title.Team" = "Team";
+"Preferences.AboutView.Title.Support" = "Support";
+
+"Preferences.AboutView.Introduction" = "Welcome to the Transport and Telecommunication Institute's class schedule app!";
+"Preferences.AboutView.Description" = "Application for viewing the schedule of the Transport and Telecommunications Institute.";
+"Preferences.AboutView.Features" = "";
+"Preferences.AboutView.NotOfficial" = "The application is not an official application of the Institute of Transport and Communications.";
+//"Preferences.AboutView.LinkToOfficial.Text" = "You can download official schedule app by";
+//"Preferences.AboutView.LinkToOfficial.Link" = "this link";
+"Preferences.AboutView.LinkToOfficial.ButtonText" = "Official app";
+
+"Preferences.AboutView.Developer" = "Developer";
+"Preferences.AboutView.DeveloperName" = "Anton Pletnev";
+
+"Preferences.AboutView.ReportABugDescription" = "If you encounter errors when working with the application, send an email to the address";
+"Preferences.AboutView.ReportABug" = "Report a Bug";

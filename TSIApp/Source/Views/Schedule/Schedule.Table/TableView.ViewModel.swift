@@ -33,7 +33,7 @@ extension Schedule.Table.TableView {
 				.store(in: &cancellables)
 			
 			appState.dateTimeUpdated
-				.dropFirst()
+//				.dropFirst()
 				.sink { dateTime in
 					self.page = .withIndex(Self.bufferSize)
 					self.periodViewModels = Self.newPeriodVms(appState.dateTime.dateAt(.startOfDay), appState.intervalType, appState)

@@ -84,12 +84,28 @@ extension Local.Keys {
 		static let tableName = "Localization"
 	}
 	
-	enum PreferencesView: String, LocalizationKey {		
+	enum PreferencesView: String, LocalizationKey {
 		case title = "Preferences.PreferencesView.Title"
 		
 		case language = "Preferences.PreferencesView.Language"
 		case selectLanguage = "Preferences.PreferencesView.SelectLanguage"
 		case about = "Preferences.PreferencesView.About"
+		
+		case aboutDescriptionTitle = "Preferences.AboutView.Title.Description"
+		case aboutTeamTitle = "Preferences.AboutView.Title.Team"
+		case aboutSupportTitle = "Preferences.AboutView.Title.Support"
+		
+		case aboutIntroduction = "Preferences.AboutView.Introduction"
+		case aboutDescription = "Preferences.AboutView.Description"
+		case aboutFeatures = "Preferences.AboutView.Features"
+		case aboutNotOfficial = "Preferences.AboutView.NotOfficial"
+		case aboutNotOfficialButtonText = "Preferences.AboutView.LinkToOfficial.ButtonText"
+		
+		case aboutDeveloper = "Preferences.AboutView.Developer"
+		case aboutDeveloperName = "Preferences.AboutView.DeveloperName"
+		
+		case reportABugDescription = "Preferences.AboutView.ReportABugDescription"
+		case reportABug = "Preferences.AboutView.ReportABug"
 		
 		
 		
