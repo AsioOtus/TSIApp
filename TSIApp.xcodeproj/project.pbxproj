@@ -29,6 +29,7 @@
 		3A1F45162726B28D00E54C4F /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F45152726B28D00E54C4F /* AboutView.swift */; };
 		3A1F45182726B51000E54C4F /* LanguageSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F45172726B51000E54C4F /* LanguageSelectView.swift */; };
 		3A1F451F272710C400E54C4F /* App.Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F451E272710C400E54C4F /* App.Colors.swift */; };
+		3A1F4521272725F400E54C4F /* TextFieldClearButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F4520272725F400E54C4F /* TextFieldClearButtonModifier.swift */; };
 		3A202EEF250931B3002EA509 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A202EEE250931B3002EA509 /* DayView.swift */; };
 		3A202EF125093369002EA509 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A202EF025093369002EA509 /* EventView.swift */; };
 		3A24CC9826C576760086E778 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 3A24CC9726C576760086E778 /* DequeModule */; };
@@ -146,6 +147,7 @@
 		3A1F45172726B51000E54C4F /* LanguageSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectView.swift; sourceTree = "<group>"; };
 		3A1F451A2726BC7200E54C4F /* Main.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Main.xcconfig; sourceTree = "<group>"; };
 		3A1F451E272710C400E54C4F /* App.Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.Colors.swift; sourceTree = "<group>"; };
+		3A1F4520272725F400E54C4F /* TextFieldClearButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearButtonModifier.swift; sourceTree = "<group>"; };
 		3A202EEB2509290C002EA509 /* UserDefaultsWrapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UserDefaultsWrapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A202EEE250931B3002EA509 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 		3A202EF025093369002EA509 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
@@ -493,6 +495,7 @@
 				3A72909F250ABA4800FA53F6 /* GroupsTextModifier.swift */,
 				3AA93CF626E8B2B500F23EBE /* EqualWidthModifier.swift */,
 				3A041FA327106FE7000F3D8D /* NavigationBarBackgroundColor.swift */,
+				3A1F4520272725F400E54C4F /* TextFieldClearButtonModifier.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -775,6 +778,7 @@
 				3A8962BC26FBB0330036BE08 /* LaunchCounter.swift in Sources */,
 				3A202EEF250931B3002EA509 /* DayView.swift in Sources */,
 				3AE77BDC24E3343900898C8C /* PreferencesView.swift in Sources */,
+				3A1F4521272725F400E54C4F /* TextFieldClearButtonModifier.swift in Sources */,
 				3AF3C9542524FB6400ADE351 /* EventView.ItemView.swift in Sources */,
 				3A4AE98824C22A3700A29477 /* SceneDelegate.swift in Sources */,
 				3ADB7D4E24C771590032E560 /* KeyValuePair.swift in Sources */,

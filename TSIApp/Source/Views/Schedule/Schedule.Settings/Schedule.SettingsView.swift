@@ -54,6 +54,7 @@ extension Schedule {
 						}
 					}
 				}
+				.buttonStyle(BorderlessButtonStyle())
 				.navigationBarTitle(Text(Local[settings: .title]), displayMode: .inline)
 				.navigationBarItems(
 					leading:
@@ -136,6 +137,7 @@ fileprivate struct SelectorView: View {
 							Local[.enterFilter],
 							text: $filterText
 						)
+						.clearButton($filterText)
 						.multilineTextAlignment(.center)
 						.font(.system(size: 20))
 						.padding(.top)
