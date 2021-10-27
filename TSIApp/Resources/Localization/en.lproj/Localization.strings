@@ -51,7 +51,7 @@
 "Preferences.AboutView.Introduction" = "Welcome to the Transport and Telecommunication Institute's class schedule app!";
 "Preferences.AboutView.Description" = "Application for viewing the schedule of the Transport and Telecommunications Institute.";
 "Preferences.AboutView.Features" = "";
-"Preferences.AboutView.NotOfficial" = "The application is not an official application of the Institute of Transport and Communications.";
+"Preferences.AboutView.NotOfficial" = "The application is not an official application of the Transport and Telecommunication Institute.";
 //"Preferences.AboutView.LinkToOfficial.Text" = "You can download official schedule app by";
 //"Preferences.AboutView.LinkToOfficial.Link" = "this link";
 "Preferences.AboutView.LinkToOfficial.ButtonText" = "Official app";

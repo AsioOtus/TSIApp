@@ -11,10 +11,12 @@ extension Preferences {
 			List {
 				Section(header: Text(Local[.aboutDescriptionTitle])) {
 					Text(Local[.aboutDescription])
+						.padding([.top, .bottom], 4)
 				}
 				
 				Section {
 					Text(Local[.aboutNotOfficial])
+						.padding([.top, .bottom], 4)
 					
 					Button(Local[.aboutNotOfficialButtonText]) {
 						if let url = URL(string: "itms-apps://apps.apple.com/lv/app/tsi-schedule/id606137492") {

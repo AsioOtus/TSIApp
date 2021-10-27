@@ -46,6 +46,7 @@ extension Schedule.Table.EventView {
 					.padding(.top, 3)
 			}
 			.padding(.bottom, 10)
+			.padding(.leading, 3)
 		}
 		
 		func isGroupsShown (_ groups: [Schedule.Event.Info.Display.ItemState]) -> Bool {
