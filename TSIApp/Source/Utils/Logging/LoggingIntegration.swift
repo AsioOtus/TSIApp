@@ -1,7 +1,7 @@
 import LoggingUtil
 import UserDefaultsUtil
 import BaseNetworkUtil
-import Multitool
+import MultitoolStringConverters
 
 extension StandardLogger: UserDefaultsUtil.LogHandler where Message == String  {
 	public func log <Value> (_ logRecord: UserDefaultsUtil.LogRecord<Value>) {

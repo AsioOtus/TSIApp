@@ -14,34 +14,6 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3A4AE9F524C34EC600A29477"
-               BuildableName = "Errors.framework"
-               BlueprintName = "Errors"
-               ReferencedContainer = "container:Errors/Errors.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3A4AE9C624C23CC600A29477"
-               BuildableName = "Networks.framework"
-               BlueprintName = "Networks"
-               ReferencedContainer = "container:Network/Networks.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "3A4AE98124C22A3700A29477"
                BuildableName = "TSI App.app"
                BlueprintName = "TSIApp"
@@ -56,24 +28,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3A4AEA3D24C3A42F00A29477"
-               BuildableName = "Log.framework"
-               BlueprintName = "Log"
-               ReferencedContainer = "container:Log/Log.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3ADB7D6724C8BFD80032E560"
-               BuildableName = "UserDefaultsUtil.framework"
-               BlueprintName = "UserDefaultsUtil"
-               ReferencedContainer = "container:UserDefaults/UserDefaultsUtil.xcodeproj">
+               BlueprintIdentifier = "3A4AE9F524C34EC600A29477"
+               BuildableName = "Errors.framework"
+               BlueprintName = "Errors"
+               ReferencedContainer = "container:Errors/Errors.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -88,6 +46,20 @@
                BuildableName = "Helpers.framework"
                BlueprintName = "Helpers"
                ReferencedContainer = "container:Helpers/Helpers.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3A5988CF25C48B4900373FFA"
+               BuildableName = "NetworkUtil.framework"
+               BlueprintName = "NetworkUtil"
+               ReferencedContainer = "container:NetworkUtil/NetworkUtil.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

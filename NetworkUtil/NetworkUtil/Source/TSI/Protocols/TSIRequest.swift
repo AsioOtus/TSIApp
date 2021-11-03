@@ -1,6 +1,6 @@
 import Helpers
 import BaseNetworkUtil
-import Multitool
+import MultitoolValueProcessing
 
 public protocol TSIRequest: Request { }
 
@@ -45,7 +45,7 @@ public extension TSIResponseModel {
 			])
 			.process(responseDataString)
 		
-		let fixedResponseString = try result.value()
+		let fixedResponseString = try result.summary.value()
 		let fixedResponseData = fixedResponseString.data(using: .utf8)!
 		return fixedResponseData
 	}

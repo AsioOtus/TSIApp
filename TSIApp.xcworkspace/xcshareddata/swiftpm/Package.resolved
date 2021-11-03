@@ -21,7 +21,7 @@
       },
       {
         "package": "LoggingUtil",
-        "repositoryURL": "https://github.com/AsioOtus/LoggingUtil.git",
+        "repositoryURL": "https://github.com/AsioOtus/LoggingUtil",
         "state": {
           "branch": "master",
           "revision": "4ef6694e8764dac1e3cca8c9a2ea8fb59593ae61",
@@ -33,7 +33,7 @@
         "repositoryURL": "https://github.com/AsioOtus/Multitool",
         "state": {
           "branch": "master",
-          "revision": "d83c9011cf0f026336c5fbeb5b5c47709e27c794",
+          "revision": "e6f439f125e0c9981bbbfb98fa130ec976da1883",
           "version": null
         }
       },

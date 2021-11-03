@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A0D04282718D6F900D9474A /* Multitool in Frameworks */ = {isa = PBXBuildFile; productRef = 3A0D04272718D6F900D9474A /* Multitool */; };
 		3A5988D525C48B4900373FFA /* NetworkUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A5988D325C48B4900373FFA /* NetworkUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A5988F525C48CB000373FFA /* Requests.GetLocalizedEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5988F325C48CB000373FFA /* Requests.GetLocalizedEvents.swift */; };
 		3A5988F625C48CB000373FFA /* Requests.GetItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5988F425C48CB000373FFA /* Requests.GetItems.swift */; };
@@ -16,6 +15,8 @@
 		3A59890125C48D2C00373FFA /* TSI.Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A59890025C48D2C00373FFA /* TSI.Requests.swift */; };
 		3A59894525C4951C00373FFA /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 3A59894425C4951C00373FFA /* SwiftyJSON */; };
 		3A59894825C4961500373FFA /* TSINetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A59894725C4961500373FFA /* TSINetworkError.swift */; };
+		3A70DBC22731ED2B00D26556 /* MultitoolValueProcessing in Frameworks */ = {isa = PBXBuildFile; productRef = 3A70DBC12731ED2B00D26556 /* MultitoolValueProcessing */; };
+		3A70DBC72731EE0F00D26556 /* Helpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A70DBC62731EE0F00D26556 /* Helpers.framework */; };
 		3AE25F9026E8074700859A13 /* BaseNetworkUtil in Frameworks */ = {isa = PBXBuildFile; productRef = 3AE25F8F26E8074700859A13 /* BaseNetworkUtil */; };
 		3AE30EE125C497C8009B22FB /* TSIRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5988FE25C48CF600373FFA /* TSIRequestFactory.swift */; };
 		3AE30EE225C497C8009B22FB /* TSIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5988FD25C48CF600373FFA /* TSIRequest.swift */; };
@@ -46,6 +47,7 @@
 		3A5988FE25C48CF600373FFA /* TSIRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSIRequestFactory.swift; sourceTree = "<group>"; };
 		3A59890025C48D2C00373FFA /* TSI.Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSI.Requests.swift; sourceTree = "<group>"; };
 		3A59894725C4961500373FFA /* TSINetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSINetworkError.swift; sourceTree = "<group>"; };
+		3A70DBC62731EE0F00D26556 /* Helpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Helpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,9 +55,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A0D04282718D6F900D9474A /* Multitool in Frameworks */,
 				3AE25F9026E8074700859A13 /* BaseNetworkUtil in Frameworks */,
 				3A59894525C4951C00373FFA /* SwiftyJSON in Frameworks */,
+				3A70DBC72731EE0F00D26556 /* Helpers.framework in Frameworks */,
+				3A70DBC22731ED2B00D26556 /* MultitoolValueProcessing in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +70,7 @@
 			children = (
 				3A5988D225C48B4900373FFA /* NetworkUtil */,
 				3A5988D125C48B4900373FFA /* Products */,
+				3A70DBB02731EC2B00D26556 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,6 +147,14 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
+		3A70DBB02731EC2B00D26556 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A70DBC62731EE0F00D26556 /* Helpers.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -175,7 +187,7 @@
 			packageProductDependencies = (
 				3A59894425C4951C00373FFA /* SwiftyJSON */,
 				3AE25F8F26E8074700859A13 /* BaseNetworkUtil */,
-				3A0D04272718D6F900D9474A /* Multitool */,
+				3A70DBC12731ED2B00D26556 /* MultitoolValueProcessing */,
 			);
 			productName = NetworkUtil;
 			productReference = 3A5988D025C48B4900373FFA /* NetworkUtil.framework */;
@@ -206,7 +218,7 @@
 			packageReferences = (
 				3A59894325C4951C00373FFA /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				3AE25F8E26E8074700859A13 /* XCRemoteSwiftPackageReference "BaseNetworkUtil" */,
-				3A0D04262718D6F900D9474A /* XCRemoteSwiftPackageReference "Multitool" */,
+				3A70DBBC2731ED2B00D26556 /* XCRemoteSwiftPackageReference "Multitool" */,
 			);
 			productRefGroup = 3A5988D125C48B4900373FFA /* Products */;
 			projectDirPath = "";
@@ -389,6 +401,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -415,6 +428,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -444,20 +458,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3A0D04262718D6F900D9474A /* XCRemoteSwiftPackageReference "Multitool" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AsioOtus/Multitool";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		3A59894325C4951C00373FFA /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
 			requirement = {
 				kind = exactVersion;
 				version = 5.0.0;
+			};
+		};
+		3A70DBBC2731ED2B00D26556 /* XCRemoteSwiftPackageReference "Multitool" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AsioOtus/Multitool";
+			requirement = {
+				branch = master;
+				kind = branch;
 			};
 		};
 		3AE25F8E26E8074700859A13 /* XCRemoteSwiftPackageReference "BaseNetworkUtil" */ = {
@@ -471,15 +485,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3A0D04272718D6F900D9474A /* Multitool */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3A0D04262718D6F900D9474A /* XCRemoteSwiftPackageReference "Multitool" */;
-			productName = Multitool;
-		};
 		3A59894425C4951C00373FFA /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3A59894325C4951C00373FFA /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		3A70DBC12731ED2B00D26556 /* MultitoolValueProcessing */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A70DBBC2731ED2B00D26556 /* XCRemoteSwiftPackageReference "Multitool" */;
+			productName = MultitoolValueProcessing;
 		};
 		3AE25F8F26E8074700859A13 /* BaseNetworkUtil */ = {
 			isa = XCSwiftPackageProductDependency;
