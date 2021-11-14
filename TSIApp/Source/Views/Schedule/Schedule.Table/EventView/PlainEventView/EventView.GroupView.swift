@@ -1,5 +1,4 @@
 import SwiftUI
-import SwiftUIKitView
 
 extension Schedule.Table.EventView {
 	struct GroupView: View {
