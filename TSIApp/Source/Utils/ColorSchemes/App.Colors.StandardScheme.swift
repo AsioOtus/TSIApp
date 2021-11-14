@@ -6,5 +6,7 @@ extension App.Colors {
 		let errorMessageBackground = App.Colors.errorMessageBackground
 		let secondaryButtonForeground = App.Colors.secondaryButtonForeground
 		let emptyEventBackground = App.Colors.emptyEventBackground
+		var eventCommentLabel = App.Colors.eventCommentLabel
+		var eventCommentBackground = App.Colors.eventCommentBackground
 	}
 }

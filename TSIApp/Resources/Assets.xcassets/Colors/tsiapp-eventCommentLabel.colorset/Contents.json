@@ -2,10 +2,10 @@
   "colors" : [
     {
       "color" : {
-        "color-space" : "extended-gray",
+        "color-space" : "gray-gamma-22",
         "components" : {
           "alpha" : "1.000",
-          "white" : "0.980"
+          "white" : "1.000"
         }
       },
       "idiom" : "universal"
@@ -18,10 +18,10 @@
         }
       ],
       "color" : {
-        "color-space" : "extended-gray",
+        "color-space" : "gray-gamma-22",
         "components" : {
           "alpha" : "1.000",
-          "white" : "0.075"
+          "white" : "0.650"
         }
       },
       "idiom" : "universal"

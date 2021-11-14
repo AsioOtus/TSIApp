@@ -21,6 +21,7 @@ extension Schedule.Table.EventView {
 				
 			case .loaded(let items):
 				let enumeratedItems = items.enumerated().map{ index, item in (loopIndex: index, item: item) }
+				
 				ForEach(enumeratedItems, id: \.loopIndex) { (loopIndex, item) in
 					ItemView(item: item, textModifier: textModifier)
 				}

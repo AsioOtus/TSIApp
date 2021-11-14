@@ -6,47 +6,52 @@ extension Schedule.Table.EventView {
 		@EnvironmentObject var appState: App.State
 		
 		var body: some View {
-			VStack (alignment: .leading) {
-				if let name = eventInfo.name {
-					Text(name)
+			VStack (alignment: .leading, spacing: 0) {
+				HStack(alignment: .firstTextBaseline, spacing: 8) {
+					Text(eventInfo.name)
+						.fixedSize(horizontal: false, vertical: true)
 						.font(.callout)
-				}
-				
-				switch eventInfo.display {
-				case .notInitialized:
-					placeholderView("Lecturer not init", .gray)
-						.padding(.top, 5)
 					
-				case .loading:
-					LoadingStateTokenView()
+					Spacer()
 					
-				case .loaded(let displayInfo):
-					if appState.lecturer == .empty {
-						ItemView(item: displayInfo.lecturer, textModifier: LecturerTextModifier())
-							.padding(.top, 1)
-					}
-					
-					if isGroupsShown(displayInfo.groups) {
-						HStack {
-							ForEach(displayInfo.groups, id: \.id) { group in
-								ItemView(item: group, textModifier: GroupsTextModifier())
-							}
+						if appState.room.value.isEmpty {
+						ItemsView(items: eventInfo.display.map{ $0.rooms }, textModifier: RoomTextModifier())
+							.padding(.trailing, 2)
 						}
-						.padding(.top, 1)
+				}
+				.padding(.top, 7.5)
+				
+				Group {
+					switch eventInfo.display {
+					case .notInitialized:
+						placeholderView("Lecturer not init", .gray)
+						
+					case .loading:
+						LoadingStateTokenView()
+						
+					case .loaded(let displayInfo):
+						if isLecturerShown(appState.lecturer) {
+							ItemView(item: displayInfo.lecturer, textModifier: LecturerTextModifier())
+								.padding(.top, 4)
+						}
+						
+						if isGroupsShown(displayInfo.groups) {
+							GroupView(groups: displayInfo.groups)
+								.padding(.top, 8)
+								
+						}
+						
+					case .failed(_):
+						Text(Local[.loadingError])
+							.foregroundColor(.red)
+							.font(.footnote)
 					}
 					
-				case .failed(_):
-					Text(Local[.loadingError])
-						.foregroundColor(.red)
-						.font(.footnote)
-						.padding(.top, 1)
+					CommentView(eventInfo: eventInfo)
+						.padding(.top, 8)
 				}
-				
-				CommentView(eventInfo: eventInfo)
-					.padding(.top, 3)
+				.padding(.leading, 1)
 			}
-			.padding(.bottom, 10)
-			.padding(.leading, 3)
 		}
 		
 		func isGroupsShown (_ groups: [Schedule.Event.Info.Display.ItemState]) -> Bool {
@@ -57,6 +62,10 @@ extension Schedule.Table.EventView {
 					&&
 					groups.first!.id == App.State.current.group.key
 				)
+		}
+		
+		func isLecturerShown (_ lecturer: SelectionModel) -> Bool {
+			lecturer == .empty
 		}
 		
 		func placeholderView (_ text: String, _ color: Color) -> some View {
