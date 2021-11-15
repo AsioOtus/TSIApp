@@ -105,7 +105,7 @@ enum AppLanguage: String, CaseIterable, Codable {
 	case latvian
 	
 	static var `default`: Self { .russian }
-	static var availableLanguages: [Self] { [.russian, .english] }
+	static var availableLanguages: [Self] { [.english, .russian] }
 	
 	var code: String {
 		switch self {

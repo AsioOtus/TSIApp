@@ -3,6 +3,7 @@ import SwiftUI
 extension Preferences {
 	struct LanguageSelectView: View {
 		@Environment(\.presentationMode) var presentation
+		@EnvironmentObject var appState: App.State
 		
 		@Binding var selectedLanguage: FrontendLanguage
 		
@@ -69,6 +70,19 @@ extension Preferences {
 							selectedLanguage = .app(language)
 						}
 					}
+					
+					HStack {
+						nameView(AppLanguage.latvian)
+							.foregroundColor(UIColor.secondaryLabel.color)
+						
+						Spacer()
+						
+						Text(Local[.inDevelopment])
+							.font(.callout)
+							.foregroundColor(UIColor.tertiaryLabel.color)
+					}
+					.listRowBackground(appState.colorScheme.emptyEventBackground.color)
+					.contentShape(Rectangle())
 				}
 			}
 			.listStyle(InsetGroupedListStyle())

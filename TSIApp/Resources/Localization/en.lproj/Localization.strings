@@ -54,7 +54,7 @@
 "Preferences.AboutView.NotOfficial" = "The application is not an official application of the Transport and Telecommunication Institute.";
 //"Preferences.AboutView.LinkToOfficial.Text" = "You can download official schedule app by";
 //"Preferences.AboutView.LinkToOfficial.Link" = "this link";
-"Preferences.AboutView.LinkToOfficial.ButtonText" = "Official app";
+"Preferences.AboutView.LinkToOfficial.ButtonText" = "Official application";
 
 "Preferences.AboutView.Developer" = "Developer";
 "Preferences.AboutView.DeveloperName" = "Anton Pletnev";

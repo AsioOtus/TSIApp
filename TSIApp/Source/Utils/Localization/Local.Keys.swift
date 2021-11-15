@@ -23,6 +23,8 @@ extension Local.Keys {
 		case latvian = "Latvian"
 		case system  = "System"
 		
+		case inDevelopment = "InDevelopment"
+		
 		
 		
 		static let tableName = "Common"

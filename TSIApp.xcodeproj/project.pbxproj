@@ -500,6 +500,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		3A6320D827425F65006E8C3D /* Languages */ = {
+			isa = PBXGroup;
+			children = (
+				3AB3604124E5DD24004D5811 /* BackendLanguage.swift */,
+				3AE77BD124E3256900898C8C /* FrontendLanguage.swift */,
+			);
+			path = Languages;
+			sourceTree = "<group>";
+		};
 		3A72909E250ABA3100FA53F6 /* ViewModifiers */ = {
 			isa = PBXGroup;
 			children = (
@@ -595,9 +604,8 @@
 		3ADB7D4A24C770E00032E560 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3A6320D827425F65006E8C3D /* Languages */,
 				3AE77BE524E4529A00898C8C /* Schedule */,
-				3AB3604124E5DD24004D5811 /* BackendLanguage.swift */,
-				3AE77BD124E3256900898C8C /* FrontendLanguage.swift */,
 				3ADB7D4D24C771590032E560 /* KeyValuePair.swift */,
 				3ADB7D5C24C88FB20032E560 /* LoadingState.swift */,
 				3A0CC78924D9BDB300F90B19 /* SelectionModel.swift */,

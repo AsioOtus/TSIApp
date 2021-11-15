@@ -33,7 +33,6 @@ extension Schedule.Table.EventView {
 			}
 			.listRowBackground(appState.colorScheme.emptyEventBackground.color)
 			.foregroundColor(UIColor.tertiaryLabel.color)
-//			.foregroundColor(Color(white: 0.75))
 		}
 	}
 }
