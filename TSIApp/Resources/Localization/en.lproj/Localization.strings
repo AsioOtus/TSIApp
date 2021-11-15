@@ -59,5 +59,6 @@
 "Preferences.AboutView.Developer" = "Developer";
 "Preferences.AboutView.DeveloperName" = "Anton Pletnev";
 
-"Preferences.AboutView.ReportABugDescription" = "If you encounter errors when working with the application, send an email to the address";
+"Preferences.AboutView.ReportABugDescription" = "If you encounter errors when working with the application, send an email to the address support@tsi-app.lv.";
 "Preferences.AboutView.ReportABug" = "Report a Bug";
+"Preferences.AboutView.MailSubject" = "Bug report";

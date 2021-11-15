@@ -29,6 +29,17 @@ struct Local {
 	}
 	
 	func localize (_ key: String, _ tableName: String) -> String {
-		NSLocalizedString(key, tableName: tableName, bundle: localizedBundle, value: key, comment: "")
+		localize(key, tableName, localizedBundle)
+	}
+	
+	func localize (_ key: String, _ tableName: String, _ language: FrontendLanguage) -> String {
+		let localizedBundle = Self.localizedBundle(language)
+		let localizedString = localize(key, tableName, localizedBundle)
+		return localizedString
+	}
+	
+	func localize (_ key: String, _ tableName: String, _ localizedBundle: Bundle) -> String {
+		let localizedString = NSLocalizedString(key, tableName: tableName, bundle: localizedBundle, value: "!\(key)", comment: "")
+		return localizedString
 	}
 }

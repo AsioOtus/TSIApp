@@ -59,5 +59,6 @@
 "Preferences.AboutView.Developer" = "Разработчик";
 "Preferences.AboutView.DeveloperName" = "Антон Плетнёв";
 
-"Preferences.AboutView.ReportABugDescription" = "Если вы столкнулись с ошибкой при работе с приложением, пожалуйста, отправьте email на адрес ";
+"Preferences.AboutView.ReportABugDescription" = "Если вы столкнулись с ошибкой при работе с приложением, пожалуйста, отправьте email на адрес support@tsi-app.lv.";
 "Preferences.AboutView.ReportABug" = "Сообщить об ошибке";
+"Preferences.AboutView.MailSubject" = "Сообщение об ошибке";

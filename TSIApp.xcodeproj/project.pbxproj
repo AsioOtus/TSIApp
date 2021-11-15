@@ -55,6 +55,9 @@
 		3A56FAC92725AD8500FA3371 /* ArraySlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A56FAC82725AD8500FA3371 /* ArraySlice.swift */; };
 		3A59890525C48DC800373FFA /* NetworkUtil.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A59890325C48DC800373FFA /* NetworkUtil.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3A6320CA2741C196006E8C3D /* EventView.GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6320C92741C196006E8C3D /* EventView.GroupView.swift */; };
+		3A6320DB27426849006E8C3D /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6320DA27426849006E8C3D /* MailView.swift */; };
+		3A6320DD2742737A006E8C3D /* UIKitExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 3A6320DC2742737A006E8C3D /* UIKitExtensions */; };
+		3A6320DF27427CAE006E8C3D /* Local.subscripts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6320DE27427CAE006E8C3D /* Local.subscripts.swift */; };
 		3A6AAE8A250171C900A3A795 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 3A6AAE89250171C900A3A795 /* SwiftDate */; };
 		3A70DC59273299D200D26556 /* LoggingUtil in Frameworks */ = {isa = PBXBuildFile; productRef = 3A70DC58273299D200D26556 /* LoggingUtil */; };
 		3A7290A0250ABA4800FA53F6 /* TextModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A72909F250ABA4800FA53F6 /* TextModifiers.swift */; };
@@ -183,6 +186,8 @@
 		3A56FAC82725AD8500FA3371 /* ArraySlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArraySlice.swift; sourceTree = "<group>"; };
 		3A59890325C48DC800373FFA /* NetworkUtil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkUtil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A6320C92741C196006E8C3D /* EventView.GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.GroupView.swift; sourceTree = "<group>"; };
+		3A6320DA27426849006E8C3D /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
+		3A6320DE27427CAE006E8C3D /* Local.subscripts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Local.subscripts.swift; sourceTree = "<group>"; };
 		3A65C35F256A988600C4A9C2 /* UserDefaultsUtil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UserDefaultsUtil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A72909F250ABA4800FA53F6 /* TextModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifiers.swift; sourceTree = "<group>"; };
 		3A7BD843250ACF7A00229CA3 /* Debug.TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debug.TestData.swift; sourceTree = "<group>"; };
@@ -250,6 +255,7 @@
 				3A6AAE8A250171C900A3A795 /* SwiftDate in Frameworks */,
 				3A24CC9826C576760086E778 /* DequeModule in Frameworks */,
 				3AA69A3927242A1A004EA0AF /* CombineExtensions in Frameworks */,
+				3A6320DD2742737A006E8C3D /* UIKitExtensions in Frameworks */,
 				3AF003C426DD757600D515B1 /* SwiftUIPullToRefresh in Frameworks */,
 				3AE30EE325C4988B009B22FB /* NetworkUtil.framework in Frameworks */,
 				3A1102862598E928006FF25E /* SwiftUIPager in Frameworks */,
@@ -424,6 +430,7 @@
 			children = (
 				3A4AE9AC24C230DC00A29477 /* Local.Keys.swift */,
 				3A4AE9A724C2302600A29477 /* Local.swift */,
+				3A6320DE27427CAE006E8C3D /* Local.subscripts.swift */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -668,6 +675,7 @@
 			isa = PBXGroup;
 			children = (
 				3AF702B1273464080087F39A /* WrappingHStackView.swift */,
+				3A6320DA27426849006E8C3D /* MailView.swift */,
 			);
 			path = UIKitWrappers;
 			sourceTree = "<group>";
@@ -713,6 +721,7 @@
 				3A0D04222718B66500D9474A /* Multitool */,
 				3AA69A3827242A1A004EA0AF /* CombineExtensions */,
 				3A70DC58273299D200D26556 /* LoggingUtil */,
+				3A6320DC2742737A006E8C3D /* UIKitExtensions */,
 			);
 			productName = TSIApp;
 			productReference = 3A4AE98224C22A3700A29477 /* TSI App.app */;
@@ -803,6 +812,7 @@
 				3A858B2F2524F0F500A3A606 /* EventView.LeadingColumnView.swift in Sources */,
 				3A0F92A626D4B99F005CE215 /* Debug.Tools.swift in Sources */,
 				3ADB7DAB24C8CBCC0032E560 /* Schedule.SettingsView.ViewModel.swift in Sources */,
+				3A6320DB27426849006E8C3D /* MailView.swift in Sources */,
 				3A9BF1D42503D5D70065A66E /* String.swift in Sources */,
 				3AE77BD224E3256900898C8C /* FrontendLanguage.swift in Sources */,
 				3AE77BD924E3304200898C8C /* Schedule.IntervalType.swift in Sources */,
@@ -826,6 +836,7 @@
 				3A4AE98A24C22A3700A29477 /* MainView.swift in Sources */,
 				3A56FAC92725AD8500FA3371 /* ArraySlice.swift in Sources */,
 				3AE30EE825C49B1F009B22FB /* Logging.swift in Sources */,
+				3A6320DF27427CAE006E8C3D /* Local.subscripts.swift in Sources */,
 				3A1F451F272710C400E54C4F /* App.Colors.swift in Sources */,
 				3A0F926B26D18273005CE215 /* Schedule.EmptyLectionDisplay.swift in Sources */,
 				3A041FA82710FADB000F3D8D /* ErrorView.swift in Sources */,
@@ -1211,6 +1222,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3A24CC9626C576760086E778 /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = DequeModule;
+		};
+		3A6320DC2742737A006E8C3D /* UIKitExtensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3AA69A3727242A1A004EA0AF /* XCRemoteSwiftPackageReference "AFExtensions" */;
+			productName = UIKitExtensions;
 		};
 		3A6AAE89250171C900A3A795 /* SwiftDate */ = {
 			isa = XCSwiftPackageProductDependency;
