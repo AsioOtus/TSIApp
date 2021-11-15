@@ -5,9 +5,7 @@ extension Schedule.Table.EventView {
 		let groups: [Schedule.Event.Info.Display.ItemState]
 		
 		let columns = [
-			GridItem(.flexible(minimum: 10, maximum: 100), spacing: 8, alignment: .leading),
-			GridItem(.flexible(minimum: 10, maximum: 100), spacing: 8, alignment: .leading),
-			GridItem(.flexible(minimum: 10, maximum: 100), spacing: 8, alignment: .leading),
+			GridItem(.adaptive(minimum: 70), spacing: 10)
 		]
 		
 		var body: some View {
