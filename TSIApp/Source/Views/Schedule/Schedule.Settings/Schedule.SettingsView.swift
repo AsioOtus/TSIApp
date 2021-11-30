@@ -55,7 +55,8 @@ extension Schedule {
 					}
 				}
 				.buttonStyle(BorderlessButtonStyle())
-				.navigationBarTitle(Text(Local[settings: .title]), displayMode: .inline)
+				.navigationBarTitleDisplayMode(.inline)
+//				.navigationBarTitle(Local[settings: .title])
 				.navigationBarItems(
 					leading:
 						Button(Local[.cancel]) {
@@ -69,6 +70,16 @@ extension Schedule {
 						}
 						.foregroundColor(.white)
 				)
+				.toolbar {
+					ToolbarItem(placement: .principal) {
+						Text(Local[settings: .title])
+							.font(.system(size: 18))
+							.fontWeight(.medium)
+							.minimumScaleFactor(0.4)
+							.foregroundColor(.white)
+							.padding([.leading, .trailing], 8)
+					}
+				}
 				.navigationBarColor(App.colorScheme.main)
 				.pullToRefresh(isShowing: self.$vm.isLoadingIndicatorVisible) {
 					self.vm.refreshValues()

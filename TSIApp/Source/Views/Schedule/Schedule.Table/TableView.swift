@@ -37,12 +37,12 @@ extension Schedule.Table {
 					}
 				}
 				.navigationBarColor(App.colorScheme.main)
+				.sheet(isPresented: $isPresentingSettingsView) {
+					Schedule.SettingsView(vm: .init(appState: appState), isShown: $isPresentingSettingsView)
+				}
 			}
 			.sheet(isPresented: $isPresentingDateView) {
 				Schedule.Table.SelectDateView(vm: .init(appState: appState), isShown: $isPresentingDateView)
-			}
-			.sheet(isPresented: $isPresentingSettingsView) {
-				Schedule.SettingsView(vm: .init(appState: appState), isShown: $isPresentingSettingsView)
 			}
 		}
 	}
@@ -64,7 +64,7 @@ extension Schedule.Table.TableView {
 	
 	var todayButton: some View {
 		Button(action: {
-			isPresentingDateView = true
+			self.isPresentingDateView = true
 		}) {
 			Image.calendar.font(.system(size: 20))
 		}
@@ -122,7 +122,7 @@ extension Schedule.Table.TableView {
 		VStack(alignment: .center) {
 			Text(Local[.noFilterSelected])
 				.padding()
-			Text("\(Local[.filterSetInstructionStart]) \"\(Image(systemName: "slider.horizontal.3"))\" \(Local[.filterSetInstructionEnd])")
+			Text("\(Local[.filterSetInstructionStart]) \(Image(systemName: "slider.horizontal.3")) \(Local[.filterSetInstructionEnd])")
 				.font(.footnote)
 				.padding()
 				.multilineTextAlignment(.center)
