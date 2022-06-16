@@ -45,7 +45,6 @@
 "Preferences.PreferencesView.About" = "About";
 
 "Preferences.AboutView.Title.Description" = "Description";
-"Preferences.AboutView.Title.Team" = "Team";
 "Preferences.AboutView.Title.Support" = "Support";
 
 "Preferences.AboutView.Introduction" = "Welcome to the Transport and Telecommunication Institute's class schedule app!";
@@ -56,7 +55,7 @@
 //"Preferences.AboutView.LinkToOfficial.Link" = "this link";
 "Preferences.AboutView.LinkToOfficial.ButtonText" = "Official application";
 
-"Preferences.AboutView.Developer" = "Developer";
+"Preferences.AboutView.Developer" = "Development";
 "Preferences.AboutView.DeveloperName" = "Anton Pletnev";
 
 "Preferences.AboutView.ReportABugDescription" = "If you encounter errors when working with the application, send an email to the address support@tsi-app.lv.";

@@ -45,7 +45,6 @@
 "Preferences.PreferencesView.About" = "О приложении";
 
 "Preferences.AboutView.Title.Description" = "Описание";
-"Preferences.AboutView.Title.Team" = "Команда";
 "Preferences.AboutView.Title.Support" = "Поддержка";
 
 "Preferences.AboutView.Introduction" = "Добро пожаловать в приложение расписания занятий Института транспорта и связи!";
@@ -56,7 +55,7 @@
 //"Preferences.AboutView.LinkToOfficial.Link" = "этой ссылке";
 "Preferences.AboutView.LinkToOfficial.ButtonText" = "Официальное приложение";
 
-"Preferences.AboutView.Developer" = "Разработчик";
+"Preferences.AboutView.Developer" = "Разработка";
 "Preferences.AboutView.DeveloperName" = "Антон Плетнёв";
 
 "Preferences.AboutView.ReportABugDescription" = "Если вы столкнулись с ошибкой при работе с приложением, пожалуйста, отправьте email на адрес support@tsi-app.lv.";

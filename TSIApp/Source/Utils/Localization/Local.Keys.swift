@@ -94,7 +94,6 @@ extension Local.Keys {
 		case about = "Preferences.PreferencesView.About"
 		
 		case aboutDescriptionTitle = "Preferences.AboutView.Title.Description"
-		case aboutTeamTitle = "Preferences.AboutView.Title.Team"
 		case aboutSupportTitle = "Preferences.AboutView.Title.Support"
 		
 		case aboutIntroduction = "Preferences.AboutView.Introduction"

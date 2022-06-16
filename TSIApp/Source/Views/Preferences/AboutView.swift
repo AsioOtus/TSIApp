@@ -25,30 +25,12 @@ extension Preferences {
 					.frame(maxWidth: .infinity)
 				}
 				
-				Section(header: Text(Local[.aboutTeamTitle])) {
+				Section {
 					HStack {
 						Text(Local[.aboutDeveloper])
 						Spacer()
 						Text(Local[.aboutDeveloperName])
 							.foregroundColor(.secondary)
-					}
-				}
-				
-				Section(header: Text(Local[.aboutSupportTitle])) {
-					Text(Local[.aboutReportABugDescription])
-						.padding([.top, .bottom], 8)
-					
-					if MFMailComposeViewController.canSendMail() {
-						Button(Local[.aboutReportABug]) {
-							self.isShowingMailView = true
-						}
-						.foregroundColor(UIColor.systemRed.color)
-						.frame(maxWidth: .infinity)
-						.sheet(isPresented: $isShowingMailView) {
-							MailView(recipients: ["support@tsi-app.lv"], subject: "[Issue] \(Local.shared.localize(Local.Keys.PreferencesView.aboutMailSubject.rawValue, Local.Keys.PreferencesView.tableName, .system))") { _, _, _ in
-								isShowingMailView = false
-							}
-						}
 					}
 				}
 			}
