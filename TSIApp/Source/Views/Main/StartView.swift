@@ -13,7 +13,7 @@ extension Main {
 					Image(uiImage: .logoWhite)
 						.resizable()
 						.aspectRatio(contentMode: .fit)
-						.frame(width: g.size.width * 0.75)
+						.frame(width: g.size.width * 0.35)
 				}
 			}
 		}

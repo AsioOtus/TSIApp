@@ -30,7 +30,6 @@
 		3A1F45182726B51000E54C4F /* LanguageSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F45172726B51000E54C4F /* LanguageSelectView.swift */; };
 		3A1F451F272710C400E54C4F /* App.Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F451E272710C400E54C4F /* App.Colors.swift */; };
 		3A1F4521272725F400E54C4F /* TextFieldClearButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F4520272725F400E54C4F /* TextFieldClearButtonModifier.swift */; };
-		3A1F45682729A0EE00E54C4F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A1F456A2729A0EE00E54C4F /* InfoPlist.strings */; };
 		3A202EEF250931B3002EA509 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A202EEE250931B3002EA509 /* DayView.swift */; };
 		3A202EF125093369002EA509 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A202EF025093369002EA509 /* EventView.swift */; };
 		3A24CC9826C576760086E778 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 3A24CC9726C576760086E778 /* DequeModule */; };
@@ -155,8 +154,6 @@
 		3A1F451A2726BC7200E54C4F /* Main.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Main.xcconfig; sourceTree = "<group>"; };
 		3A1F451E272710C400E54C4F /* App.Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.Colors.swift; sourceTree = "<group>"; };
 		3A1F4520272725F400E54C4F /* TextFieldClearButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearButtonModifier.swift; sourceTree = "<group>"; };
-		3A1F45692729A0EE00E54C4F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3A1F456B2729A0F000E54C4F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3A202EEB2509290C002EA509 /* UserDefaultsWrapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UserDefaultsWrapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A202EEE250931B3002EA509 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 		3A202EF025093369002EA509 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
@@ -441,7 +438,6 @@
 				3A4AE9B024C2319800A29477 /* Common.strings */,
 				3ADB7DA824C8C9160032E560 /* Localization.strings */,
 				3A041FAE2710FD2E000F3D8D /* Errors.strings */,
-				3A1F456A2729A0EE00E54C4F /* InfoPlist.strings */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -777,7 +773,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A4AE99224C22A3800A29477 /* LaunchScreen.storyboard in Resources */,
-				3A1F45682729A0EE00E54C4F /* InfoPlist.strings in Resources */,
 				3A041FAC2710FD2E000F3D8D /* Errors.strings in Resources */,
 				3A4AE98F24C22A3800A29477 /* Preview Assets.xcassets in Resources */,
 				3ADB7DA624C8C9160032E560 /* Localization.strings in Resources */,
@@ -891,15 +886,6 @@
 				3A041FAF2710FD2F000F3D8D /* ru */,
 			);
 			name = Errors.strings;
-			sourceTree = "<group>";
-		};
-		3A1F456A2729A0EE00E54C4F /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3A1F45692729A0EE00E54C4F /* en */,
-				3A1F456B2729A0F000E54C4F /* ru */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		3A4AE99024C22A3800A29477 /* LaunchScreen.storyboard */ = {
