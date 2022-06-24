@@ -24,6 +24,7 @@
 		3A1166D824DD9DCD007E0CD6 /* Helpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1166D724DD9DCD007E0CD6 /* Helpers.framework */; };
 		3A1166D924DD9DCD007E0CD6 /* Helpers.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1166D724DD9DCD007E0CD6 /* Helpers.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3A143C8E26CC67EB004AF872 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A143C8D26CC67EB004AF872 /* Collection.swift */; };
+		3A14C12A28665D8700FE9B2A /* PrivacyPolicy.md in Resources */ = {isa = PBXBuildFile; fileRef = 3A14C12928665D8700FE9B2A /* PrivacyPolicy.md */; };
 		3A16FEC024F434FA00CBA263 /* TableView.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A16FEBF24F434FA00CBA263 /* TableView.ViewModel.swift */; };
 		3A1953E824F9333B002B0203 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1953E724F9333B002B0203 /* Calendar.swift */; };
 		3A1F45162726B28D00E54C4F /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F45152726B28D00E54C4F /* AboutView.swift */; };
@@ -147,6 +148,7 @@
 		3A0FB83524F59DC4007531DA /* Event.Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.Class.swift; sourceTree = "<group>"; };
 		3A1166D724DD9DCD007E0CD6 /* Helpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Helpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A143C8D26CC67EB004AF872 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		3A14C12928665D8700FE9B2A /* PrivacyPolicy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PrivacyPolicy.md; sourceTree = "<group>"; };
 		3A16FEBF24F434FA00CBA263 /* TableView.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.ViewModel.swift; sourceTree = "<group>"; };
 		3A1953E724F9333B002B0203 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		3A1F45152726B28D00E54C4F /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 				3A4AE98B24C22A3800A29477 /* Assets.xcassets */,
 				3A4AE99324C22A3800A29477 /* Info.plist */,
 				3A4AE99024C22A3800A29477 /* LaunchScreen.storyboard */,
+				3A14C12928665D8700FE9B2A /* PrivacyPolicy.md */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -772,6 +775,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A14C12A28665D8700FE9B2A /* PrivacyPolicy.md in Resources */,
 				3A4AE99224C22A3800A29477 /* LaunchScreen.storyboard in Resources */,
 				3A041FAC2710FD2E000F3D8D /* Errors.strings in Resources */,
 				3A4AE98F24C22A3800A29477 /* Preview Assets.xcassets in Resources */,
