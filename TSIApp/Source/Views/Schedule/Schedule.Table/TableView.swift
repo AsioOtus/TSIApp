@@ -29,6 +29,12 @@ extension Schedule.Table {
 						pagerView
 					}
 				}
+				.onChange(of: vm.appState.intervalType) { value in
+					App.Delegate.amplitude.track(
+						eventType: "table.type.changed",
+						eventProperties: ["value": value.rawValue]
+					)
+				}
 				.navigationBarTitleDisplayMode(.inline)
 				.navigationBarItems(leading: scheduleSettingsButton, trailing: todayButton)
 				.toolbar {

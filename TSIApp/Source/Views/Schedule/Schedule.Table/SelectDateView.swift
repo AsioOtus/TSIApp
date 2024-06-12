@@ -37,6 +37,9 @@ extension Schedule.Table {
 					
 					Spacer()
 				}
+				.onAppear {
+					App.Delegate.amplitude.track(eventType: "calendar.presented")
+				}
 				.navigationBarTitle(Local[selectDate: .title], displayMode: .inline)
 				.navigationBarItems(
 					leading:

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -81,6 +81,8 @@
 		3AAC8AD924F7C5A700CF7CEE /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAC8AD824F7C5A700CF7CEE /* Event.swift */; };
 		3AB3604224E5DD24004D5811 /* BackendLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB3604124E5DD24004D5811 /* BackendLanguage.swift */; };
 		3AB65CD626C9C3C60014C9E4 /* PeriodView.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB65CD526C9C3C60014C9E4 /* PeriodView.ViewModel.swift */; };
+		3AC4C8EB2C19C39F005EF4DE /* AmplitudeSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3AC4C8EA2C19C39F005EF4DE /* AmplitudeSwift */; };
+		3AC4C8ED2C19C8D2005EF4DE /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 3AC4C8EC2C19C8D2005EF4DE /* PrivacyInfo.xcprivacy */; };
 		3AC4CA4A26EB6FC600A153CC /* MainHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC4CA4926EB6FC600A153CC /* MainHostingController.swift */; };
 		3ADB7D4224C43E840032E560 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB7D4124C43E840032E560 /* UIColor.swift */; };
 		3ADB7D4C24C770EC0032E560 /* Schedule.FilterValuesSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB7D4B24C770EC0032E560 /* Schedule.FilterValuesSets.swift */; };
@@ -208,6 +210,7 @@
 		3AAC8AD824F7C5A700CF7CEE /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		3AB3604124E5DD24004D5811 /* BackendLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendLanguage.swift; sourceTree = "<group>"; };
 		3AB65CD526C9C3C60014C9E4 /* PeriodView.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodView.ViewModel.swift; sourceTree = "<group>"; };
+		3AC4C8EC2C19C8D2005EF4DE /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		3AC4CA4926EB6FC600A153CC /* MainHostingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainHostingController.swift; sourceTree = "<group>"; };
 		3ADB7D4124C43E840032E560 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		3ADB7D4B24C770EC0032E560 /* Schedule.FilterValuesSets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.FilterValuesSets.swift; sourceTree = "<group>"; };
@@ -252,6 +255,7 @@
 				3A0CC78D24DB5ED600F90B19 /* SwiftUIRefresh in Frameworks */,
 				3A4AEA0824C34F2800A29477 /* Errors.framework in Frameworks */,
 				3A6AAE8A250171C900A3A795 /* SwiftDate in Frameworks */,
+				3AC4C8EB2C19C39F005EF4DE /* AmplitudeSwift in Frameworks */,
 				3A24CC9826C576760086E778 /* DequeModule in Frameworks */,
 				3AA69A3927242A1A004EA0AF /* CombineExtensions in Frameworks */,
 				3A6320DD2742737A006E8C3D /* UIKitExtensions in Frameworks */,
@@ -375,6 +379,7 @@
 		3A4AE99924C22A4100A29477 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3AC4C8EC2C19C8D2005EF4DE /* PrivacyInfo.xcprivacy */,
 				3A1F45192726BC0A00E54C4F /* Configuration */,
 				3A4AE9A924C2304700A29477 /* Localization */,
 				3A4AE98B24C22A3800A29477 /* Assets.xcassets */,
@@ -721,6 +726,7 @@
 				3AA69A3827242A1A004EA0AF /* CombineExtensions */,
 				3A70DC58273299D200D26556 /* LoggingUtil */,
 				3A6320DC2742737A006E8C3D /* UIKitExtensions */,
+				3AC4C8EA2C19C39F005EF4DE /* AmplitudeSwift */,
 			);
 			productName = TSIApp;
 			productReference = 3A4AE98224C22A3700A29477 /* TSI App.app */;
@@ -760,6 +766,7 @@
 				3A0D04212718B66500D9474A /* XCRemoteSwiftPackageReference "Multitool" */,
 				3AA69A3727242A1A004EA0AF /* XCRemoteSwiftPackageReference "AFExtensions" */,
 				3A70DC57273299D200D26556 /* XCRemoteSwiftPackageReference "LoggingUtil" */,
+				3AC4C8E92C19C39F005EF4DE /* XCRemoteSwiftPackageReference "Amplitude-Swift" */,
 			);
 			productRefGroup = 3A4AE98324C22A3700A29477 /* Products */;
 			projectDirPath = "";
@@ -781,6 +788,7 @@
 				3A4AE98F24C22A3800A29477 /* Preview Assets.xcassets in Resources */,
 				3ADB7DA624C8C9160032E560 /* Localization.strings in Resources */,
 				3A4AE98C24C22A3800A29477 /* Assets.xcassets in Resources */,
+				3AC4C8ED2C19C8D2005EF4DE /* PrivacyInfo.xcprivacy in Resources */,
 				3A4AE9AE24C2319800A29477 /* Common.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1169,6 +1177,14 @@
 				kind = branch;
 			};
 		};
+		3AC4C8E92C19C39F005EF4DE /* XCRemoteSwiftPackageReference "Amplitude-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/amplitude/Amplitude-Swift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		3AE25F9126E8078F00859A13 /* XCRemoteSwiftPackageReference "UserDefaultsUtil" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AsioOtus/UserDefaultsUtil.git";
@@ -1232,6 +1248,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3AA69A3727242A1A004EA0AF /* XCRemoteSwiftPackageReference "AFExtensions" */;
 			productName = CombineExtensions;
+		};
+		3AC4C8EA2C19C39F005EF4DE /* AmplitudeSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3AC4C8E92C19C39F005EF4DE /* XCRemoteSwiftPackageReference "Amplitude-Swift" */;
+			productName = AmplitudeSwift;
 		};
 		3AE25F9226E8080B00859A13 /* UserDefaultsUtil */ = {
 			isa = XCSwiftPackageProductDependency;

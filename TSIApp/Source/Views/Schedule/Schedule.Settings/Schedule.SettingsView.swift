@@ -84,6 +84,9 @@ extension Schedule {
 				.pullToRefresh(isShowing: self.$vm.isLoadingIndicatorVisible) {
 					self.vm.refreshValues()
 				}
+				.onAppear {
+					App.Delegate.amplitude.track(eventType: "filters.presented")
+				}
 			}
 		}
 	}

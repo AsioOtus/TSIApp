@@ -1,115 +1,131 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "AFExtensions",
-        "repositoryURL": "https://github.com/AsioOtus/AFExtensions",
-        "state": {
-          "branch": "master",
-          "revision": "6371c6baf078abf0f245ed3837b3ede64d0573ce",
-          "version": null
-        }
-      },
-      {
-        "package": "BaseNetworkUtil",
-        "repositoryURL": "https://github.com/AsioOtus/BaseNetworkUtil.git",
-        "state": {
-          "branch": "master",
-          "revision": "5f248d0a1f5447d5270cb080825d516ebafcec92",
-          "version": null
-        }
-      },
-      {
-        "package": "LoggingUtil",
-        "repositoryURL": "https://github.com/AsioOtus/LoggingUtil",
-        "state": {
-          "branch": "master",
-          "revision": "4ef6694e8764dac1e3cca8c9a2ea8fb59593ae61",
-          "version": null
-        }
-      },
-      {
-        "package": "Multitool",
-        "repositoryURL": "https://github.com/AsioOtus/Multitool",
-        "state": {
-          "branch": "master",
-          "revision": "e6f439f125e0c9981bbbfb98fa130ec976da1883",
-          "version": null
-        }
-      },
-      {
-        "package": "swift-collections",
-        "repositoryURL": "https://github.com/apple/swift-collections",
-        "state": {
-          "branch": null,
-          "revision": "0959ba76a1d4a98fd11163aa83fd49c25b93bfae",
-          "version": "0.0.5"
-        }
-      },
-      {
-        "package": "SwiftDate",
-        "repositoryURL": "https://github.com/malcommac/SwiftDate.git",
-        "state": {
-          "branch": null,
-          "revision": "700dde1b3417fd4a7fd2bec9f5bc8ab2de1b96b4",
-          "version": "6.1.0"
-        }
-      },
-      {
-        "package": "Introspect",
-        "repositoryURL": "https://github.com/siteline/SwiftUI-Introspect.git",
-        "state": {
-          "branch": null,
-          "revision": "2e09be8af614401bc9f87d40093ec19ce56ccaf2",
-          "version": "0.1.3"
-        }
-      },
-      {
-        "package": "SwiftUIPullToRefresh",
-        "repositoryURL": "https://github.com/AppPear/SwiftUI-PullToRefresh",
-        "state": {
-          "branch": null,
-          "revision": "5850f1ead6c4931015231bde26f38b9f543342aa",
-          "version": "1.0.0"
-        }
-      },
-      {
-        "package": "SwiftUIPager",
-        "repositoryURL": "https://github.com/fermoya/SwiftUIPager",
-        "state": {
-          "branch": null,
-          "revision": "d6745593cfa38ffa1fca75244a01e422d220d407",
-          "version": "2.3.1"
-        }
-      },
-      {
-        "package": "SwiftUIRefresh",
-        "repositoryURL": "https://github.com/siteline/SwiftUIRefresh.git",
-        "state": {
-          "branch": null,
-          "revision": "fa8fac7b5eb5c729983a8bef65f094b5e0d12014",
-          "version": "0.0.3"
-        }
-      },
-      {
-        "package": "SwiftyJSON",
-        "repositoryURL": "https://github.com/SwiftyJSON/SwiftyJSON.git",
-        "state": {
-          "branch": null,
-          "revision": "2b6054efa051565954e1d2b9da831680026cd768",
-          "version": "5.0.0"
-        }
-      },
-      {
-        "package": "UserDeaultsUtil",
-        "repositoryURL": "https://github.com/AsioOtus/UserDefaultsUtil.git",
-        "state": {
-          "branch": "master",
-          "revision": "0070f386223357d70e43000b224f1f8da32861d5",
-          "version": null
-        }
+  "pins" : [
+    {
+      "identity" : "afextensions",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AsioOtus/AFExtensions",
+      "state" : {
+        "branch" : "master",
+        "revision" : "6371c6baf078abf0f245ed3837b3ede64d0573ce"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "amplitude-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/amplitude/Amplitude-Swift",
+      "state" : {
+        "branch" : "main",
+        "revision" : "e0e47a747eb619dbb0f553c2025ae621bd514793"
+      }
+    },
+    {
+      "identity" : "analytics-connector-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/amplitude/analytics-connector-ios.git",
+      "state" : {
+        "revision" : "e2ca17ac735bcbc48b13062484541702ef45153d",
+        "version" : "1.0.3"
+      }
+    },
+    {
+      "identity" : "basenetworkutil",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AsioOtus/BaseNetworkUtil.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "5f248d0a1f5447d5270cb080825d516ebafcec92"
+      }
+    },
+    {
+      "identity" : "loggingutil",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AsioOtus/LoggingUtil",
+      "state" : {
+        "branch" : "master",
+        "revision" : "4ef6694e8764dac1e3cca8c9a2ea8fb59593ae61"
+      }
+    },
+    {
+      "identity" : "multitool",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AsioOtus/Multitool",
+      "state" : {
+        "branch" : "master",
+        "revision" : "e6f439f125e0c9981bbbfb98fa130ec976da1883"
+      }
+    },
+    {
+      "identity" : "swift-collections",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-collections",
+      "state" : {
+        "revision" : "0959ba76a1d4a98fd11163aa83fd49c25b93bfae",
+        "version" : "0.0.5"
+      }
+    },
+    {
+      "identity" : "swiftdate",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/malcommac/SwiftDate.git",
+      "state" : {
+        "revision" : "700dde1b3417fd4a7fd2bec9f5bc8ab2de1b96b4",
+        "version" : "6.1.0"
+      }
+    },
+    {
+      "identity" : "swiftui-introspect",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/siteline/SwiftUI-Introspect.git",
+      "state" : {
+        "revision" : "2e09be8af614401bc9f87d40093ec19ce56ccaf2",
+        "version" : "0.1.3"
+      }
+    },
+    {
+      "identity" : "swiftui-pulltorefresh",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AppPear/SwiftUI-PullToRefresh",
+      "state" : {
+        "revision" : "5850f1ead6c4931015231bde26f38b9f543342aa",
+        "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "swiftuipager",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/fermoya/SwiftUIPager",
+      "state" : {
+        "revision" : "d6745593cfa38ffa1fca75244a01e422d220d407",
+        "version" : "2.3.1"
+      }
+    },
+    {
+      "identity" : "swiftuirefresh",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/siteline/SwiftUIRefresh.git",
+      "state" : {
+        "revision" : "fa8fac7b5eb5c729983a8bef65f094b5e0d12014",
+        "version" : "0.0.3"
+      }
+    },
+    {
+      "identity" : "swiftyjson",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftyJSON/SwiftyJSON.git",
+      "state" : {
+        "revision" : "2b6054efa051565954e1d2b9da831680026cd768",
+        "version" : "5.0.0"
+      }
+    },
+    {
+      "identity" : "userdefaultsutil",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AsioOtus/UserDefaultsUtil.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "0070f386223357d70e43000b224f1f8da32861d5"
+      }
+    }
+  ],
+  "version" : 2
 }

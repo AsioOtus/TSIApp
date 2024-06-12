@@ -1,3 +1,4 @@
+import AmplitudeSwift
 import UIKit
 import LoggingUtil
 import UserDefaultsUtil
@@ -6,8 +7,12 @@ extension App {
 	@UIApplicationMain
 	class Delegate: UIResponder, UIApplicationDelegate {
 		private(set) static var current: Delegate!
-		
+		private(set) static var amplitude: Amplitude!
+
 		func application (_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+			Self.amplitude = .init(configuration: .init(apiKey: "f058128cbd598bb1b17be6524fb018dc"))
+			Self.amplitude.track(eventType: "app.start")
+
 			LaunchCounter.default.launch(cycle: Date().toFormat("hh:mm:ss"))
 
 			Logging.defaultLogger.notice("APPLICATION STARTED | Launch number: \(LaunchCounter.default.count) – \(LaunchCounter.default.label)")
